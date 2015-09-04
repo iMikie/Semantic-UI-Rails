@@ -6,6 +6,8 @@ Theming support enables sites to have their own visually unique, yet consistent 
 ```
 ![Semantic UI screenshot] (https://github.com/iMikie/Semantic-UI-Rails/blob/master/SUI_screenshot.png)
 
+Just as it's said there is a *Rails Way* of doing things, there is also a *Semantic-UI* way.  I think you'll like it.  Depending on your level of experience, though, it can take a little time to wrap your head around it and figure out how to make it play nice with Rails.  It did for me and so I wrote this.  Once you are up and running, you'll find the Semantic-UI website has lots of documentation.   
+
 1. This **README** describes how to add Semantic-UI to a new or existing Rails app.  
 2. This **repo** contains a new Rails 4.2.3 app with Semantic-UI already set up, and integrated into several examples structured for Rails.  See "Using the Basic Semantic-UI Rails App".
 
