@@ -3,8 +3,7 @@
 ####[Semantic-UI](www.semantic-ui.com) is one of the newest and most promising toolkits.  
 ```
 It's beautiful, responsive (i.e. adjusts to mobile), and provides complex UI widgets gracefully.  
-It provides an amazing authentication facility, and extensive support for theming, so you can 
-create visually unique yet consistent designs.
+It provides an amazing authentication facility, and extensive support for theming.
 ```
 ####This site/repo shows how to use Semantic-UI with Rails.  
 
