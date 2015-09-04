@@ -3,7 +3,15 @@ If you want to try Semantic-UI with Rails you've come to the right place.
 
 ![Semantic UI screenshot] (https://github.com/iMikie/Semantic-UI-Rails/blob/master/SUI_screenshot.png)
 
-Semantic-UI is an HTML-CSS-Javascript-JQuery user interface toolkit. Though Semantic-UI has lots of documentation, there is no tutorial so depending on your level of experience, it may take a while to wrap your head around it and make it play nice with Rails.  I hope to save you that trouble.
+####Creating user interfaces in HTML and CSS is tedious.  
+<br>
+Most everyone uses some form of UI toolkit. 
+<br>
+[Semantic-UI](www.semantic-ui.com) is one of the newest and most promising.  It's beautiful, responsive (i.e. supports mobile phones and tablet page sizes), and supports complex UI widgets gracefully.  It is written in HTML, CSS, Javascript and JQuery.  You need to know these to use Semantic-UI.
+
+This site/repo shows how to use Semantic-UI with Rails.  
+
+Semantic-UI: is a library of HTML-CSS-Javascript and JQuery that makes it easier to create beautiful, responsive (i.e. adjust well to phone and tablet size) user interfaces. Though Semantic-UI has lots of documentation, there is no tutorial so depending on your level of experience, it may take a while to wrap your head around it and make it play nice with Rails.  I hope to save you that trouble.
 
 1. This **README** describes how to add Semantic-UI to a new or existing Rails app.  
 2. This **repo** contains a new Rails 4.2.3 app with Semantic-UI already set up, and several examples structured for Rails.  See "Using the Basic Semantic-UI Rails App".
