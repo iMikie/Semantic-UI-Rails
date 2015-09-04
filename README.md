@@ -1,8 +1,8 @@
 # Semantic-UI-Rails
-####Creating user interfaces in HTML and CSS is tedious.  
-Most everyone uses some form of UI toolkit. 
+#### *Creating user interfaces in HTML and CSS is tedious.  
+    * Most everyone uses some form of UI toolkit. 
 ####[Semantic-UI](www.semantic-ui.com) is one of the newest and most promising.  
-It's beautiful, responsive (i.e. supports mobile phones and tablet page sizes), and supports complex UI widgets gracefully.  It is written in HTML, CSS, Javascript and JQuery.  You need to know these to use Semantic-UI.
+    * It's beautiful, responsive (i.e. supports mobile phones and tablet page sizes), and supports complex UI widgets gracefully.  It is written in HTML, CSS, Javascript and JQuery.  You need to know these to use Semantic-UI.
 
 ####This site/repo shows how to use Semantic-UI with Rails.  
 
