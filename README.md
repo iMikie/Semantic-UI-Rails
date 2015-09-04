@@ -9,10 +9,10 @@ Theming support enables SUI sites to have their own visually unique, yet consist
 
 
 
-Semantic-UI is a library written in HTML-CSS-Javascript and JQuery You need to know these to use it.  Though Semantic-UI has lots of documentation, there is no tutorial so depending on your level of experience, it may take a while to wrap your head around it and make it play nice with Rails.  I hope to save you that trouble.
+Semantic-UI is a library written in HTML-CSS-Javascript and JQuery. You need to know these.  
 
 1. This **README** describes how to add Semantic-UI to a new or existing Rails app.  
-2. This **repo** contains a new Rails 4.2.3 app with Semantic-UI already set up, and several examples structured for Rails.  See "Using the Basic Semantic-UI Rails App".
+2. This **repo** contains a new Rails 4.2.3 app with Semantic-UI already set up, and integrated into several examples structured for Rails.  See "Using the Basic Semantic-UI Rails App".
 
 3. A larger Repo, **Semantic-UI-Rails-User-Session** contains a Rails 4.2.3 app in which I've prebuilt *User* and *Session* resources.  It has_secure_password authentication, user sign up, user login, and session management and uses Semantic-UI to provide the web interface for those features.  The user signup form uses Semantic-UI's amazing client-side support for  validation.  This would take you a long time to build by hand.  This repo gives you a few examples of how get Rails RESTful resources talking to Semantic-UI.  I built it with the idea that it would be my starting point project from now on. I hope to add several OAuth examples to it round it out.  
 <br>
