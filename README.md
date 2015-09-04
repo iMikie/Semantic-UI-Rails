@@ -1,8 +1,8 @@
 # Semantic-UI-Rails
 ####[Semantic-UI](www.semantic-ui.com) is one of the newest and most promising user interface toolkits.  
 ```
-It's beautiful, mobile responsive (often automatically) and provides complex UI widget gracefully.  
-Theming support enables SUI sites to have their own visually unique, yet consistent look and feel.
+It's beautiful,  easily mobile responsive, and provides complex UI widget gracefully.  
+Extensive theming support enables sites to have their own visually unique, yet consistent look and feel, i.e. branding.
 ```
 ![Semantic UI screenshot] (https://github.com/iMikie/Semantic-UI-Rails/blob/master/SUI_screenshot.png)
 
