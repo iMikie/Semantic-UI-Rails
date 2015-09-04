@@ -12,13 +12,14 @@ Semantic-UI is an HTML-CSS-Javascript-JQuery user interface toolkit. Though Sema
 <br>
 --
 
-There are many features of Semantic-UI I haven't tried yet.  If you try them before I do, please let me know and/or send me a pull request.
+There are many features of Semantic-UI I haven't tried yet.  If you try them before I do, send me an email or pull request.
 
-Thanks, Michael Farr
+Thanks, <br>
+Michael Farr <br>
 *Tiburon CA, Sept 2015*
 
-michaelmfarr@gmail.com <br>
-mikefarr@mac.com
+michaelmfarr at gmail dot com <br>
+mikefarr at mac dot com
 
 
 
