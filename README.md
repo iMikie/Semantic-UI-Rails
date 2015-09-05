@@ -2,8 +2,6 @@
 
 ####[Semantic-UI](www.semantic-ui.com) is one of the newest and most promising user interface toolkits.  
 
-By itself, Semantic-UI is a set of CSS/LESS, Javascript/JQuery libraries that you include in your project.  You use Semantic-UI by writing special (and quite elegant) HTML/CSS and then calling the appropriate Javascript/JQuery routines. 
-
 1. This **README** describes how to add Semantic-UI to a new Rails app and then shows how to build the screenshot (video) below.
 2. This **repo** contains a that Rails 4.2.3 app with the code we built and most likely more Semantic-UI examples integrated into routes, controller, helper, layout and views.  You can fork this repo and be running immediately.  
 
@@ -28,6 +26,9 @@ mikefarr at mac dot com
 
 
 ## Adding Semantic-UI to Rails
+
+By itself, Semantic-UI is a set of CSS/LESS, Javascript/JQuery libraries that you include in your project.  You use Semantic-UI by writing special (and quite elegant) HTML/CSS and then calling the appropriate Javascript/JQuery routines. 
+
 Start with a new or used Rails app.  I'm on 4.2.3, using Ruby 2.1.2 on a Macintosh. 
 
 Add/make sure the following lines are in your Gemfile.  
