@@ -32,7 +32,7 @@ mikefarr at mac dot com
 ## Adding Semantic-UI to Rails
 Start with a new or used Rails app.  I'm on 4.2.3, using Ruby 2.1.2 on a Macintosh. 
 
-Add the following lines to your Gemfile.  
+Add/make sure the following lines are in your Gemfile.  
 
 ```ruby
 # Use jquery as the JavaScript library
@@ -46,7 +46,11 @@ gem 'therubyracer'
 gem 'less-rails-semantic_ui', '~> 2.0.7.0'
 gem 'autoprefixer-rails', '~> 5.2.1.2'
 ```
-To some extent, the order of these lines is important so don't change them unless you know what you are doing. 
+####The order of these lines is important so don't change them unless you know what you are doing. 
 
 * less-rails-semantic_ui  
-There are several gems out there for semantic UI.  I chose Semantic-UI-Rails-LESS because it appears to be created by the authors of Semantic-UI,.  It is updated frequently and appears to use Travis CI, which if we are lucky will automatically build new versions as the main Semantic-UI library is updated.  This is the only gem I could find that allows theming.  
+There are several gems out there for semantic UI.  I chose Semantic-UI-Rails-LESS because it appears to be created by the authors of Semantic-UI.  It is updated frequently and appears to use Travis CI, which if we are lucky will automatically build new versions as the main Semantic-UI library is updated.  This is the only gem I could find that allows theming.  
+* autoprefixer-rails
+Have you seen CSS with lines like: *:-webkit-full-screen a*. That's browser specific CSS code. Autoprefixer is a CSS processor that uses a database which tracks how you do stuff in different browsers and modifies the output CSS. 
+* therubyracer
+This embeds Google's V8 javascript engine into Ruby. 
