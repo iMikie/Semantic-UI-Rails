@@ -17,7 +17,7 @@ You need to know HTML-CSS-Javascript and JQuery to use Semantic-UI.
 
 Lawrence Turton has a non-rails [tutorial](https://webdesign.tutsplus.com/courses/getting-started-with-semantic-ui) over at Tuts.
 
-There are many features of Semantic-UI I haven't tried yet.  If you try them before I do, send me an email or pull request.
+If you liked this repo, please drop me a note.  I'm new to the Rails and Semantic communities.  There are many features of Semantic-UI I haven't tried yet.  If you try them before I do, please send me an email or even better, a pull request.
 
 Thanks, <br>
 Michael Farr <br>
