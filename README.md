@@ -55,4 +55,39 @@ There are several gems out there for semantic UI.  I chose Semantic-UI-Rails-LES
 * autoprefixer-rails
 Have you seen CSS with lines like: *:-webkit-full-screen a*. That's browser specific CSS code. Autoprefixer is a CSS processor that uses a database which tracks how you do stuff in different browsers and modifies the output CSS. 
 
-run bundle install
+Now run bundle in the terminal:
+```
+    $ bundle install
+```
+Now we need to add the javascript, css, and configuration files that Semantic-UI provides to the appropriate places in Rails. This happens to be in the in the `vendor/assets` directory and luckily for us, the less-rails-semantic_ui gem provides a rake task that will do that for us.  Just execute the following command in the terminal:
+``
+    $ rails generate semantic_ui:install
+```    
+Take a look in the vendor/assets.  There are javascripts and stylesheets folders which now contain semantic_ui folders.  There is a config folder inside the stylesheets/semantic_ui folder that contains the files you'll need to modify to theme Semantic-UI.
+
+Now it's time to tell Rails where to find everything.  Add the following to your app/assets/javascripts/application.js file:
+```
+//
+//= require jquery
+//= require jquery.turbolinks
+//= require jquery_ujs
+//= require semantic_ui/semantic_ui
+//= require_self
+//= require_tree .
+//= require turbolinks
+```
+
+
+
+Require `semantic_ui/semantic_ui.js` in `app/assets/application.js`:
+
+    ...
+    //= require semantic_ui/semantic_ui
+    ...
+
+Require `semantic_ui/semantic_ui.css` in `app/assets/application.css`:
+
+    ...
+    *= require semantic_ui/semantic_ui
+    ...
+
