@@ -1,12 +1,11 @@
 # Semantic-UI-Rails
 
 ####[Semantic-UI](www.semantic-ui.com) is one of the newest and most promising user interface toolkits.  
-```
+
 It's beautiful, mobile responsive, and provides many amazing UI widgets gracefully.  
 Theming support enables sites to have their own visually unique, yet consistent look and feel.
-```
 
-By itself, Semantic-UI is a set of CSS/LESS, Javascript/JQuery libraries that you include in your project.  You use Semantic-UI by writing special (and quite elegant) HTML/CSS and calling the appropriate Javascript/JQuery routines. 
+By itself, Semantic-UI is a set of CSS/LESS, Javascript/JQuery libraries that you include in your project.  You use Semantic-UI by writing special (and quite elegant) HTML/CSS and then calling the appropriate Javascript/JQuery routines. 
 
 1. This **README** describes how to add Semantic-UI to a new or existing Rails app.  
 2. This **repo** contains a new Rails 4.2.3 app with several Semantic-UI examples integrated into routes, controller, helper, layout and views.  You can fork this repo and be running immediately.  
@@ -47,10 +46,9 @@ gem 'less-rails-semantic_ui', '~> 2.0.7.0'
 gem 'autoprefixer-rails', '~> 5.2.1.2'
 ```
 ####The order of these lines is important so don't change them unless you know what you are doing. 
-
+* therubyracer
+This embeds Google's V8 javascript engine into Ruby. 
 * less-rails-semantic_ui  
 There are several gems out there for semantic UI.  I chose Semantic-UI-Rails-LESS because it appears to be created by the authors of Semantic-UI.  It is updated frequently and appears to use Travis CI, which if we are lucky will automatically build new versions as the main Semantic-UI library is updated.  This is the only gem I could find that allows theming.  
 * autoprefixer-rails
 Have you seen CSS with lines like: *:-webkit-full-screen a*. That's browser specific CSS code. Autoprefixer is a CSS processor that uses a database which tracks how you do stuff in different browsers and modifies the output CSS. 
-* therubyracer
-This embeds Google's V8 javascript engine into Ruby. 
