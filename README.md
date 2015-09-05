@@ -11,10 +11,6 @@ Theming support enables sites to have their own visually unique, yet consistent 
 
 Semantic-UI is a library written in HTML-CSS-Javascript and JQuery and you need to know these.  
 
-3. It is my intention to next build a larger Repo, **Semantic-UI-Rails-User-Session** that will contain a Rails 4.2.3 app in which I've prebuilt *User* and *Session* resources.  It will provide secure_password authentication, user sign up, user login, and session management, ideally adding oauth for GitHub, LinkedIn and Google.  It will use Semantic-UI to provide the web interface for those features it's amazing support for validation.  It would be my starting point project from now on. I hope to add several OAuth examples to it to round it out.  
-<br>
---
-
 There are many features of Semantic-UI I haven't tried yet.  If you try them before I do, send me an email or pull request.
 
 Thanks, <br>
