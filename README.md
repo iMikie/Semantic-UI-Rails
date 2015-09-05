@@ -7,7 +7,7 @@ Theming support enables sites to have their own visually unique, yet consistent 
 
 By itself, Semantic-UI is a set of CSS/LESS, Javascript/JQuery libraries that you include in your project.  You use Semantic-UI by writing special (and quite elegant) HTML/CSS and then calling the appropriate Javascript/JQuery routines. 
 
-1. This **README** describes how to add Semantic-UI to a new or existing Rails app and give several examples of how to use it.  
+1. This **README** describes how to add Semantic-UI to a new or existing Rails app and give several examples of how to use it. We'll build the screenshot (video) above.  
 2. This **repo** contains a new Rails 4.2.3 app with several Semantic-UI examples integrated into routes, controller, helper, layout and views.  You can fork this repo and be running immediately.  
 
 ![Semantic UI screenshot] (https://github.com/iMikie/Semantic-UI-Rails/blob/master/SUI_screenshot.png)
@@ -73,7 +73,6 @@ Now take a look in the `vendor/assets` folder.  There are javascripts/ and style
 Add/make sure the following is in your `app/assets/javascripts/application.js` file.  Note:  this is more specific than what the semantic gem instructions say to do.  This is probably because I'm starting from a new rails app. You can google `jquery_ujs` and `turbolinks` if you need to know more deeply what is going on here.
 
 ```javascript
-//
 //= require jquery
 //= require jquery.turbolinks
 //= require jquery_ujs
@@ -96,3 +95,5 @@ Require `semantic_ui/semantic_ui.css` in `app/assets/application.css`:
  */
 ```
 
+###Let's create some UI!
+Let's add some semantic-ui to our 
