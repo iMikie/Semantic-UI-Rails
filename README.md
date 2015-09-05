@@ -7,7 +7,7 @@ Theming support enables sites to have their own visually unique, yet consistent 
 
 By itself, Semantic-UI is a set of CSS/LESS, Javascript/JQuery libraries that you include in your project.  You use Semantic-UI by writing special (and quite elegant) HTML/CSS and then calling the appropriate Javascript/JQuery routines. 
 
-1. This **README** describes how to add Semantic-UI to a new or existing Rails app.  
+1. This **README** describes how to add Semantic-UI to a new or existing Rails app and give several examples of how to use it.  
 2. This **repo** contains a new Rails 4.2.3 app with several Semantic-UI examples integrated into routes, controller, helper, layout and views.  You can fork this repo and be running immediately.  
 
 ![Semantic UI screenshot] (https://github.com/iMikie/Semantic-UI-Rails/blob/master/SUI_screenshot.png)
@@ -16,7 +16,7 @@ You need to know HTML-CSS-Javascript and JQuery to use Semantic-UI.
 
 Lawrence Turton has a non-rails [tutorial](https://webdesign.tutsplus.com/courses/getting-started-with-semantic-ui) over at Tuts.
 
-If you liked this repo, please drop me a note. Though I've been a programmer for a while, I'm new to the Rails and Semantic-UI communities.  Also, I've written this for others who are likewise new. I think that many people are afraid of writing to a beginner's level for fear of appearing like a beginner themselves.  No such problem here.  The truth is that it only takes a second for a reader to skip a line of explanation they didn't need whereas a line that was really needed but is missing can leave them dead in the water. 
+If you liked this repo, please drop me a note. Though I've been a programmer for a while, I'm new to the Rails and Semantic-UI communities.  I've written this for others who are likewise new. I think that many people are afraid of writing to a beginner's level for fear of appearing like a beginner themselves.  No such problem here.  The truth is that it only takes a second for a reader to skip a line of explanation they didn't need whereas a line that was really needed but is missing can leave them dead in the water. 
 
 There are many features of Semantic-UI I haven't tried yet.  If you try them before I do, please send me an email or even better, a pull request.
 
@@ -48,9 +48,11 @@ gem 'less-rails-semantic_ui', '~> 2.0.7.0'
 gem 'autoprefixer-rails', '~> 5.2.1.2'
 ```
 ####The order of these lines is important so don't change them unless you know what you are doing. 
-* therubyracer
+* therubyracer <br>
 This embeds Google's V8 javascript engine into Ruby. 
 * less-rails-semantic_ui  
 There are several gems out there for semantic UI.  I chose Semantic-UI-Rails-LESS because it appears to be created by the authors of Semantic-UI.  It is updated frequently and appears to use Travis CI, which if we are lucky will automatically build new versions as the main Semantic-UI library is updated.  This is the only gem I could find that allows theming.  
 * autoprefixer-rails
 Have you seen CSS with lines like: *:-webkit-full-screen a*. That's browser specific CSS code. Autoprefixer is a CSS processor that uses a database which tracks how you do stuff in different browsers and modifies the output CSS. 
+
+run bundle install
