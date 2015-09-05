@@ -66,11 +66,11 @@ Now we need to add the javascript, css, and configuration files provided by gem 
     $ rails generate semantic_ui:install
 ```    
 
-Now take a look in the vendor/assets folder.  There are javascripts/ and stylesheets/ folders which now contain semantic_ui folders.  There is a config folder inside the stylesheets/semantic_ui folder that contains the files you'll need to modify, down the road, to theme Semantic-UI.
+Now take a look in the `vendor/assets` folder.  There are javascripts/ and stylesheets/ folders which now contain semantic_ui folders.  There is a config folder inside the `stylesheets/semantic_ui folder` that contains the files you'll need to modify, down the road, to theme Semantic-UI.
 
 ###Tell Rails where to find the javascript files.  
 
-Add/make sure the following is in your app/assets/javascripts/application.js file.  Note:  this is more specific than what the semantic gem instructions say to do.  This is probably because I'm starting from a new rails app. You can google jq uery_ujs and turbolinks if you need to know more deeply what is going on here.
+Add/make sure the following is in your `app/assets/javascripts/application.js` file.  Note:  this is more specific than what the semantic gem instructions say to do.  This is probably because I'm starting from a new rails app. You can google jq uery_ujs and turbolinks if you need to know more deeply what is going on here.
 
 ```javascript
 //
