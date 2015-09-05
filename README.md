@@ -9,7 +9,7 @@ Theming support enables sites to have their own visually unique, yet consistent 
 1. This **README** describes how to add Semantic-UI to a new or existing Rails app.  
 2. This **repo** contains a new Rails 4.2.3 app with Semantic-UI already set up and several examples integrated into routes, controller, helper, layout and views.  You can fork this repo and be running immediately.  
 
-Semantic-UI is written in HTML-CSS-Javascript and JQuery and you need to know these.  Lawrence Turton has a (non-rails) [https://webdesign.tutsplus.com/courses/getting-started-with-semantic-ui](tutorial) over at Tuts.
+Semantic-UI is written in HTML-CSS-Javascript and JQuery and you need to know these.  Lawrence Turton has a non-rails [tutorial](https://webdesign.tutsplus.com/courses/getting-started-with-semantic-ui) over at Tuts.
 
 There are many features of Semantic-UI I haven't tried yet.  If you try them before I do, send me an email or pull request.
 
