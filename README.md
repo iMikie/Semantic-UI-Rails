@@ -19,7 +19,7 @@ Michael Farr <br>
 
 michaelmfarr at gmail dot com <br>
 mikefarr at mac dot com
-
+---
 
 
 ##Semantic-UI
