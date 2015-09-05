@@ -52,8 +52,8 @@ gem 'autoprefixer-rails', '~> 5.2.1.2'
 This embeds Google's V8 javascript engine into Ruby. 
 * less-rails-semantic_ui  
 There are several gems out there for semantic UI.  I chose Semantic-UI-Rails-LESS because it appears to be created by the authors of Semantic-UI.  It is updated frequently and appears to use Travis CI, which if we are lucky will automatically build new versions as the main Semantic-UI library is updated.  This is the only gem I could find that allows theming.  
-* autoprefixer-rails
-Have you seen CSS with lines like: *:-webkit-full-screen a*. That's browser specific CSS code. Autoprefixer is a CSS processor that uses a database which tracks how you do stuff in different browsers and modifies the output CSS. 
+* autoprefixer-rails <br>
+Have you seen CSS with lines like: *:-webkit-full-screen a*. That's browser specific CSS code. Autoprefixer is a CSS processor that uses a database which tracks how stuff is done in different browsers and heavily modifies the output CSS. 
 
 Now run bundle in the terminal:
 ```
