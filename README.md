@@ -60,16 +60,17 @@ Now run bundle in the terminal:
     $ bundle install
 ```
 ###Adding the Semantic-UI libraries
-Now we need to add the javascript, css, and configuration files provided by gem to the appropriate places in Rails. This happens to be in the in the `vendor/assets` directory.   Luckily for us, the less-rails-semantic_ui gem provides a rake task that will do that for us.  Just execute the following command in the terminal:
-``
+Now we need to add the javascript, css, and configuration files provided by gem to the appropriate places in Rails. These should go in the `vendor/assets` directory.   Luckily for us the less-rails-semantic_ui gem provides a command to do that.  Just execute the following command in your terminal:
+
+````
     $ rails generate semantic_ui:install
 ```    
 
-Now take a look in the vendor/assets.  There are javascripts and stylesheets folders which now contain semantic_ui folders.  There is a config folder inside the stylesheets/semantic_ui folder that contains the files you'll need to modify to theme Semantic-UI.
+Now take a look in the vendor/assets folder.  There are javascripts/ and stylesheets/ folders which now contain semantic_ui folders.  There is a config folder inside the stylesheets/semantic_ui folder that contains the files you'll need to modify, down the road, to theme Semantic-UI.
 
 ###Tell Rails where to find the javascript files.  
 
-Add/make sure the following is in your app/assets/javascripts/application.js file.  
+Add/make sure the following is in your app/assets/javascripts/application.js file.  Note:  this is more specific than what the semantic gem instructions say to do.  This is probably because I'm starting from a new rails app. You can google jq uery_ujs and turbolinks if you need to know more deeply what is going on here.
 
 ```javascript
 //
