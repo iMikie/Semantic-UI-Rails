@@ -59,14 +59,19 @@ Now run bundle in the terminal:
 ```
     $ bundle install
 ```
-Now we need to add the javascript, css, and configuration files that Semantic-UI provides to the appropriate places in Rails. This happens to be in the in the `vendor/assets` directory and luckily for us, the less-rails-semantic_ui gem provides a rake task that will do that for us.  Just execute the following command in the terminal:
+###Adding the Semantic-UI libraries
+Now we need to add the javascript, css, and configuration files provided by gem to the appropriate places in Rails. This happens to be in the in the `vendor/assets` directory.   Luckily for us, the less-rails-semantic_ui gem provides a rake task that will do that for us.  Just execute the following command in the terminal:
 ``
     $ rails generate semantic_ui:install
 ```    
-Take a look in the vendor/assets.  There are javascripts and stylesheets folders which now contain semantic_ui folders.  There is a config folder inside the stylesheets/semantic_ui folder that contains the files you'll need to modify to theme Semantic-UI.
 
-Now it's time to tell Rails where to find everything.  Add the following to your app/assets/javascripts/application.js file:
-```
+Now take a look in the vendor/assets.  There are javascripts and stylesheets folders which now contain semantic_ui folders.  There is a config folder inside the stylesheets/semantic_ui folder that contains the files you'll need to modify to theme Semantic-UI.
+
+###Tell Rails where to find the javascript files.  
+
+Add/make sure the following is in your app/assets/javascripts/application.js file.  
+
+```javascript
 //
 //= require jquery
 //= require jquery.turbolinks
@@ -77,17 +82,16 @@ Now it's time to tell Rails where to find everything.  Add the following to your
 //= require turbolinks
 ```
 
+###Tell Rails where to find the CSS files
 
-
-Require `semantic_ui/semantic_ui.js` in `app/assets/application.js`:
-
-    ...
-    //= require semantic_ui/semantic_ui
-    ...
+Add/make sure the following is in your app/assets/stylesheets/application.css file.  
 
 Require `semantic_ui/semantic_ui.css` in `app/assets/application.css`:
-
-    ...
-    *= require semantic_ui/semantic_ui
-    ...
+```css
+/*
+ *= require semantic_ui/semantic_ui
+ *= require_tree .
+ *= require_self
+ */
+```
 
