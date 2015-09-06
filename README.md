@@ -1,5 +1,7 @@
 # Semantic-UI-Rails
 
+Thanks for stopping by.
+
 ####[Semantic-UI](www.semantic-ui.com) is one of the newest and most promising user interface toolkits.  
 
 1. This **README** describes how to add Semantic-UI to a new Rails app and then shows how to build the screenshot (video) below in a mobile responsive design, and using Semantic's amazing validation support.
