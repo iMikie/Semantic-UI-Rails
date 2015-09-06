@@ -377,9 +377,6 @@ $(document)
         $('#m_btn').on('click', function () {
             $('#m_menu').sidebar('toggle');
         })
-        //highlight top menu element based on page number embedded in the hidden which_page div
-        var menu_item_index = $('div[which_page]').attr('which_page');
-        $('#menu a:eq(' + menu_item_index + '), #m_menu a:eq(' + menu_item_index + ')').addClass('active');
 
         // when goto > 631px hide the mobile sidebar
         var mq = window.matchMedia('all and (min-width: 631px)');
@@ -409,3 +406,19 @@ Now there's a couple of more tweaks I'd like to make: reducing the fontsize on t
 ```
 ###Try it out
 Now reload the browser and try it out.  Shrink the width of the window until the menu disappears.  Next, click the mobile menu button and watch the slideout menu do its thing.  Select a menu item and it disappears.  
+
+###some menu highlighting
+I've noticed that the I'd like the menu items to be highlighted to reflect the page that we are on, thus the signup menu item should be selected if we are on the signup page.  
+
+Let's put a hidden div on each page that contains the item number of the menu item we need to highlight, 0 for the signup page, 1,2,3 for the other pages.
+
+```HTML
+<div which_page="0" hidden="true"></div>
+```
+Add the following to the `application.js` file right after the #m_btn callback. 
+```javascript
+        //highlight top menu element based on page number embedded in the hidden which_page div
+        var menu_item_index = $('div[which_page]').attr('which_page');
+        $('#menu a:eq(' + menu_item_index + '), #m_menu a:eq(' + menu_item_index + ')').addClass('active'); 
+```
+##Now let's do the user signup page
