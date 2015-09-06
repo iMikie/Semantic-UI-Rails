@@ -44,17 +44,17 @@ gem 'turbolinks'
 # Build JSON APIs with ease. Read more: https://github.com/rails/jbuilder
 gem 'jbuilder', '~> 2.0'
 # Semantic UI assets
-gem 'therubyracer'
+gem 'therubyracer'a
 gem 'less-rails-semantic_ui', '~> 2.0.7.0'
 gem 'autoprefixer-rails', '~> 5.2.1.2'
 ```
 ####The order of these lines is important so don't change them unless you know what you are doing. 
-* therubyracer <br>
+* **`therubyracer`** <br>
 This embeds Google's V8 javascript engine into Ruby. 
-* less-rails-semantic_ui  
-There are several gems out there for semantic UI.  I chose Semantic-UI-Rails-LESS because it appears to be created by the authors of Semantic-UI.  It is updated frequently and appears to use Travis CI, which if we are lucky will automatically build new versions as the main Semantic-UI library is updated.  This is the only gem I could find that allows theming.  
-* autoprefixer-rails <br>
-Have you seen CSS with lines like: `:-webkit-full-screen a`. That's browser specific CSS code. Autoprefixer is a CSS processor that uses a database which tracks browser specific code and modifies the output CSS. 
+* **`less-rails-semantic_ui`**  
+There are several gems out there for semantic UI.  I chose [Semantic-UI-Rails-LESS](https://github.com/Semantic-Org/Semantic-UI-Rails-LESS/blob/master/README.md) because it appears to be created by the authors of Semantic-UI.  `'~> 2.0.7.0'` is the most recent version number as of when I wrote this. Work is ongoing and active.  This is the only gem I could find that allows theming.  
+* a**`utoprefixer-rails`** <br>
+This gem is required by **`less-rails-semantic_ui`**.  The Have you seen CSS with lines like: `:-webkit-full-screen a`. That's browser specific CSS code. Autoprefixer is a CSS processor that uses a database which tracks browser specific code and modifies the output CSS. 
 
 Now run bundle in the terminal:
 ```
