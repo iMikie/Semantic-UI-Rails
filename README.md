@@ -29,7 +29,7 @@ mikefarr at mac dot com
 
 ## Adding Semantic-UI to Rails
 
-By itself, Semantic-UI is a set of CSS/LESS, Javascript/JQuery libraries that you include in your project.  You use Semantic-UI by writing special (and quite elegant) HTML/CSS and then calling the appropriate Javascript/JQuery routines. 
+By itself, Semantic-UI is a set of CSS/LESS, Javascript/JQuery libraries that you include in your project.  (You don't need to know LESS to use Semantic-UI).  You use Semantic-UI by adding some clearly named CSS classes to your HTML tags and when needed calling appropriate Javascript/JQuery routines. Let's get started.
 
 Start with a new or used Rails app.  I'm using Rails 4.2.3, Ruby 2.1.2, and the [postgres app](http://postgresapp.com/) on a Macintosh. 
 
