@@ -10,6 +10,96 @@
  * defined in the other CSS/SCSS files in this directory. It is generally better to create a new
  * file per style scope.
  *
+ *= require semantic_ui/semantic_ui
  *= require_tree .
  *= require_self
  */
+body {
+    padding: 0;
+    margin: 0;
+    /*width: 100%;*/
+    /*height: 100%;*/
+    font-family: "Helvetica Neue", arial, sans-serif;
+    /*background: url(Waterfall-HD-Wallpaper1.jpg) no-repeat center center fixed;*/
+    -webkit-font-smoothing: antialiased;
+    font-weight: 200;
+    background-color: #000;
+
+}
+
+#header {
+    position: relative; /* child elements will now reflect the boundries of the parent */
+    overflow: hidden;
+    padding-bottom: 5em;
+}
+
+#mainHead {
+    margin: 40px 40px 0px 40px;
+    text-align: center; /*center the mobile menu button */
+}
+
+/*div.field.disabled * {*/
+    /*pointer-events: none;*/
+    /*/!* dynamically adding a class of "disabled" will actually disable an input.  Don't need to use*/
+        /*disabled="disabled" *!/*/
+/*}*/
+
+#menu {
+    max-width: 1024px;
+    margin: 0 auto;
+}
+
+#bkgnd {
+    position: absolute;
+    top: -10px;
+    width: 100%;
+    height: auto;
+    z-index: -1;
+
+}
+
+#m_btn {
+    display: none; /* m_btn must hidden initially and placed before its media query in this file */
+}
+div.pusher.dimmed #mainHead {
+    text-align: left !important;
+}
+#menus a.item {
+    text-docoration: none;
+    color: #666;
+}
+@media all and (min-width: 631px) {
+    #smallNews {
+        display: none;
+    }
+}
+
+@media all and (max-width: 630px) {
+    #menu {
+        display: none;
+    }
+
+    #News.ui.center.aligned.icon {
+        display: none;
+    }
+
+    #smallNews {
+        display: inline-block;
+        margin-left: 35%
+    }
+
+    #m_btn {
+        display: inline-block;
+        /*note that we can't center here because it's an inline-block, must center from the parent*/
+    }
+}
+@media all and (max-width: 730px) {
+    #News {
+        font-size: 1.7em;
+    }
+}
+@media all and (max-width: 900px) {
+    #mainHead .News {
+        margin-top: 10%;
+    }
+}

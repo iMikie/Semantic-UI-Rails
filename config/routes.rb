@@ -1,3 +1,4 @@
+
 Rails.application.routes.draw do
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
@@ -5,6 +6,11 @@ Rails.application.routes.draw do
   # You can have the root of your site routed with "root"
   # root 'welcome#index'
 
+  root 'semantic#signup'
+  get '/signup' => 'semantic#signup'
+  get '/example_2' => 'semantic#example_2'
+  get '/example_3' => 'semantic#example_3'
+  get '/example_4' => 'semantic#example_4'
   # Example of regular route:
   #   get 'products/:id' => 'catalog#view'
 
