@@ -4,7 +4,7 @@ Thanks for stopping by.
 
 [Semantic-UI](www.semantic-ui.com) is one of the newest and most promising user interface toolkits. 
 
-This **README** describes step-by-step how to add Semantic-UI to a new Rails app. Next we'll build the UI for the example in the screenshot below.  In doing so we'll take advantage of Semantic-UI's support for mobile responsive design and (surprisingly elegant support for) client side validation.  If you find you need more help with Semantic-UI itself, Lawrence Turton has a nice non-rails tutorial over on [Tuts](https://webdesign.tutsplus.com/courses/getting-started-with-semantic-ui).  
+This **README** describes step-by-step how to add Semantic-UI to a new Rails app.  Next we'll build the UI for the example in the screenshot below.  In doing so we'll take advantage of Semantic-UI's rather elegant support for mobile responsive design and client side validation.  If you find you need more help with Semantic-UI itself, Lawrence Turton has a nice tutorial over on [Tuts](https://webdesign.tutsplus.com/courses/getting-started-with-semantic-ui).  
 
 This **repo** contains the Rails 4.2.3 app as described in this readme.  You can fork this repo and be running immediately. (FYI, I use Postgres for my database so the gemfile contains the Postgres gem.  If you use sqlite then remove the pg gem from the gemfile and add in the gem for sqlite3 before you `rake db:create` and `rails s.)
 
