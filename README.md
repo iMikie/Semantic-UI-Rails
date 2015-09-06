@@ -2,11 +2,11 @@
 
 Thanks for stopping by.  
 
-[Semantic-UI](www.semantic-ui.com) is one of the newest and most promising user interface toolkits. The semantic-ui website is well documented but there's no tutorial for beginners, especially those who'd like to use it with Rails.  Therefore...
+[Semantic-UI](www.semantic-ui.com) is one of the newest and most promising user interface toolkits. The semantic-ui website is well documented but alas, there's no tutorial for beginners especially those who'd like to use it with Rails.  Therefore...
 
 This **README** describes how to add Semantic-UI to a new Rails app and then shows how to build the example screenshotted (or possibly in video) below.  The example uses mobile responsive design, as well as Semantic's amazing validation support.
 
-This **repo** contains the Rails 4.2.3 app as described in this readme. You can fork this repo and be running immediately.  
+This **repo** contains the Rails 4.2.3 app as described in this readme. You can fork this repo and be running immediately. If you are an experienced Rails developer just check the vendor folder, your routes, controller, views, and the css/js files and you should be able to figure it out.   
 
 ![Semantic UI screenshot] (https://github.com/iMikie/Semantic-UI-Rails/blob/master/SUI_screenshot.png)
 
@@ -14,7 +14,7 @@ Lawrence Turton has a non-rails [tutorial](https://webdesign.tutsplus.com/course
 
 You need to know HTML-CSS-Javascript and JQuery to use Semantic-UI.   
 
-If you liked this repo, please drop me a note. Though I've been a programmer for a while, I'm new to the Rails and Semantic-UI communities.  I've written this for others who are likewise new. I think that many people are afraid of writing to a beginner's level for fear of appearing like a beginner themselves.  No such problem here.  The truth is that it only takes a second for a reader to skip a line of explanation they didn't need whereas a line that was really needed but is missing can leave them dead in the water. 
+If you liked this repo, please drop me a note. Though I've been a programmer for a while, I'm new to the Rails and Semantic-UI communities.  I've written this for others who are likewise new. I think that many people are afraid of writing to a beginner's level for fear of appearing like a beginner themselves.  No such problem here.  Besides, it's my experience that what keeps you from trying somethingbleeding edge new is the fear that you'll run into a wall and your time will be wasted.  The truth is that it only takes a second for a reader to skip a line of explanation they didn't need whereas a line that was really needed but is missing can leave them dead in the water. 
 
 There are many features of Semantic-UI I haven't tried yet.  If you try them before I do, please send me an email or even better, a pull request and we'll include it here.
 
@@ -98,7 +98,15 @@ Require `semantic_ui/semantic_ui.css` in `app/assets/application.css`:
 
 ###Let's create some UI!
 
-Let's add some semantic-ui to our Rails app.  Let's create 4 blank web template pages in a new folder, **`views/semantic*`:
+Let's add some semantic-ui to our Rails app!  Take a look at our image above.  Our little example website will have a nice background image, a menu to take us to 4 different pages and the first page will be our user signup example. Later, we'll also create a vertical menu to demonstrate mobile responsive design.
+
+-
+
+Eventually all 4 pages in this repo should get filled out with examples so don't be surprised if you fork this repo and find them there and the "example" filenames have been changed to something more descriptive.
+
+-
+
+Let's create 4 blank web pages,  in a new folder, **`views/semantic**`:
 
 ```sh
 cd app/views
@@ -107,11 +115,9 @@ cd semantic
 touch  signup.html.erb example_2.html.erb example_3.html.erb example_4.html.erb
 ```
 
--
+Let's create routes for those pages in `routes.rb`
 
-Eventually all 4 pages in this repo should get filled out with xamples so don't be surprised if you fork this repo and find them there and the "example" filenames have been changed to something more descriptive.
 
--
 
 
 Now let's add routes for these files: /signup /example_2 /example_3 /example_4
