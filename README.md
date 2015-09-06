@@ -256,9 +256,9 @@ To understand what's going on here, look up the examples on the menu page on sem
 
 A sidebar looks for the items it needs to push aside to be wrapped in a div with the class "pusher" so we'll need to add that.  We'll also need a button that will take the place of our main menu on the smaller screen of a phone as well as a smaller version of our logo so let's add those now. Here's what your complete `application.html.erb` file should look like:
 
-**`application.html.erb**`
+**`application.html.erb`**
 
-```erb
+```html
 <!DOCTYPE html>
 <html>
 <head>
@@ -333,7 +333,7 @@ A sidebar looks for the items it needs to push aside to be wrapped in a div with
 If the screen is larger than 630 pixels in width, I want to hide the mobile menu button and, if it's displayed, the mobile menu as well: the user could have rotated a tablet or resized the window on a laptop.  If the screen is smaller that 630px, then I want to display the mobile button and hide the regular menu.  
 
 Add the following media queries to the `application.css` file:
-```
+```css
 #m_btn {
     display: none; /* m_btn must hidden initially and placed before its media query in this file */
 }
@@ -370,8 +370,7 @@ Refresh your browser and you'll see there's just a couple more things to do.
 ###Adding some Javascript
 We need to add some JQuery to attach a toggle action to our mobile menu button so that it will toggle the slide out menu when clicked.  We also need some javascript to hide the slide out menu if our screen is resized to be greater than, say, 730px.  We need javascript here and not a media query because the slide out menu is too complex and we have to call it's `hide` method explicitly.  Add this javascript to your `application.js` file:
 
-```
-
+```javascript
 $(document)
     .ready(function () {
 
@@ -396,7 +395,7 @@ $(document)
 
 Now there's a couple of more tweaks I'd like to make: reducing the fontsize on the menu logo text as the user reduces the width of the sindow and and setting a margin of 10% on the top of the main header when the window is very wide.  Add the following to the `application.css` file:
 
-```
+```css
 @media all and (max-width: 730px) {
     #News {
         font-size: 1.7em;
