@@ -53,7 +53,7 @@ gem 'autoprefixer-rails', '~> 5.2.1.2'
 This embeds Google's V8 javascript engine into Ruby. 
 * **`less-rails-semantic_ui`**  
 There are several gems out there for semantic UI.  I chose [Semantic-UI-Rails-LESS](https://github.com/Semantic-Org/Semantic-UI-Rails-LESS/blob/master/README.md) because it appears to be created by the authors of Semantic-UI.  `'~> 2.0.7.0'` is the most recent version number as of when I wrote this. Work is ongoing and active.  This is the only gem I could find that allows theming.  
-* a**`utoprefixer-rails`** <br>
+* **`utoprefixer-rails`** <br>
 This gem is required by **`less-rails-semantic_ui`**.  The Have you seen CSS with lines like: `:-webkit-full-screen a`. That's browser specific CSS code. Autoprefixer is a CSS processor that uses a database which tracks browser specific code and modifies the output CSS. 
 
 Now run bundle in the terminal:
@@ -97,4 +97,17 @@ Require `semantic_ui/semantic_ui.css` in `app/assets/application.css`:
 ```
 
 ###Let's create some UI!
-Let's add some semantic-ui to our 
+Let's add some semantic-ui to our Rails app.  Let's create 4 blank web pages: 
+
+```sh
+cd app/views
+mkdir semantic
+cd semantic
+touch  signup.html.erb example_2.html.erb example_3.html.erb example_4.html.erb
+```
+-
+Eventually all 4 pages in this repo should get filled out with xamples so don't be surprised if you fork this repo and find them there and the "example" filenames have been changed to something more descriptive.
+-
+
+Now let's add routes for these files: /signup /example_2 /example_3 /example_4
+application.html.erb  we'll put a button bar that will take us to our 4 example pages.  This menu 
