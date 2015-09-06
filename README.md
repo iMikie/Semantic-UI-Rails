@@ -8,7 +8,7 @@ This **README** describes step-by-step how to add Semantic-UI to a new Rails app
 
 This **repo** contains the Rails 4.2.3 app as described in this readme.  You can fork this repo and be running immediately. (FYI, I use Postgres for my database so the gemfile contains the Postgres gem.  If you use sqlite then remove the pg gem from the gemfile and add in the gem for sqlite3 before you `rake db:create` and `rails s.)
 
-I try (intentionally) to keep to the following convention here: one semantic-ui example per web page.  If that page is named, say, `example_foo.html.erb` then the css for it can be found in `example_foo.css` and the javascript in `example_foo.js`. This is to make it easy to concentrate on one example at a time.    
+I'm trying out a new instructional convention: one example per HTML page with separate CSS and JS files for each example. Thus given `example_foo.html.erb` you know to look for `example_foo.css` and `example_foo.js`. Yes, I know you probably wouldn't factor it that way in production. The benefit should be obvious.
 
 ![Semantic UI screenshot] (https://github.com/iMikie/Semantic-UI-Rails/blob/master/SUI_screenshot.png)
 
