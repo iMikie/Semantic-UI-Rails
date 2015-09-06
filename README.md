@@ -4,7 +4,7 @@ Thanks for stopping by.
 
 [Semantic-UI](www.semantic-ui.com) is one of the newest and most promising user interface toolkits. Their website is well documented but alas, there's no tutorial for beginners or how to get it to play nice with Rails.  Therefore...
 
-This **README** describes how to add Semantic-UI to a new Rails app and then shows how to build the example in the screenshot below.  The example uses Semantic-UI's support for mobile responsive design as well as surprisingly awesome validation support.
+This **README** describes how to add Semantic-UI to a new Rails app and then shows how to build the example in the screenshot below.  The example uses Semantic-UI's support for mobile responsive design as well as it's surprisingly awesome validation support.
 
 This **repo** contains the Rails 4.2.3 app as described in this readme. You can fork this repo and be running immediately. If you are an experienced Rails developer just check the vendor folder, routes, controller, views, and the css/js files and you should be able to figure it out. I separate .css and .js into files with names matching their views so you can make heads and tails of who does what to whom.
 
