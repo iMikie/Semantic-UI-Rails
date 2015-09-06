@@ -39,6 +39,8 @@ Add or make sure the following lines are in your Gemfile.  Some will likely alre
 ```ruby
 # Use jquery as the JavaScript library
 gem 'jquery-rails'
+gem 'jquery-turbolinks'
+
 # Turbolinks makes following links in your web application faster. Read more: https://github.com/rails/turbolinks
 gem 'turbolinks'
 # Build JSON APIs with ease. Read more: https://github.com/rails/jbuilder
@@ -98,15 +100,9 @@ Require `semantic_ui/semantic_ui.css` in `app/assets/application.css`:
 
 ###Let's create some UI!
 
-Let's add some semantic-ui to our Rails app!  Take a look at our image above.  Our little example website will have a nice background image, a menu to take us to 4 different pages and the first page will be our user signup example. Later, we'll also create a vertical menu to demonstrate mobile responsive design.
+Let's add some semantic-ui to our Rails app!  Our example website will have a nice background image, a menu to take us to 4 different pages and the first page will be our user signup example. Later, we'll also create a vertical menu to demonstrate mobile responsive design.
 
--
-
-Eventually all 4 pages in this repo should get filled out with examples so don't be surprised if you fork this repo and find them there and the "example" filenames have been changed to something more descriptive.
-
--
-
-Let's create 4 blank web pages,  in a new folder, **`views/semantic**`:
+Let's create the 4 blank web pages.  Create a new folder inside the views, **`views/semantic**` and create 4 files there
 
 ```sh
 cd app/views
@@ -115,7 +111,37 @@ cd semantic
 touch  signup.html.erb example_2.html.erb example_3.html.erb example_4.html.erb
 ```
 
-Let's create routes for those pages in `routes.rb`
+Let's create routes for those pages in `routes.rb`:
+
+```
+  get '/signup' => 'semantic#signup'
+  get '/example_2' => 'semantic#example_2'
+  get '/example_3' => 'semantic#example_3'
+  get '/example_4' => 'semantic#example_4'
+  ```
+  Let's add a **`semantic_controller file`** in **`app/controllers`** with the contents:
+  ```
+  class SemanticController < ApplicationController
+  
+  def signup
+    render :signup
+  end
+
+  def example_2
+    render :example_2
+  end
+
+  def example_3
+    render :example_3
+  end
+
+  def example_4
+    render :example_4
+  end
+end
+```
+
+
 
 
 
