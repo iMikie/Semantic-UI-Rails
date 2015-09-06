@@ -98,7 +98,7 @@ Require `semantic_ui/semantic_ui.css` in `app/assets/application.css`:
  */
 ```
 
-###Let's started!
+###Let's get started!
 
 Let's add some semantic-ui to our Rails app!  Our example website will have a nice background image, a menu to take us to 4 different pages and the first page will be our user signup example. Later, we'll also create a vertical menu to demonstrate mobile responsive design.
 
@@ -371,10 +371,11 @@ Refresh your browser and you'll see there's just a couple more things to do.
 We need to add some JQuery to attach a toggle action to our mobile menu button so that it will toggle the slide out menu when clicked.  We also need some javascript to hide the slide out menu if our screen is resized to be greater than, say, 730px.  We need javascript here and not a media query because the slide out menu is too complex and we have to call it's `hide` method explicitly.  Add this javascript to your `application.js` file:
 
 ```
+
 $(document)
     .ready(function () {
 
-   $('#m_btn').on('click', function () {
+        $('#m_btn').on('click', function () {
             $('#m_menu').sidebar('toggle');
         })
         //highlight top menu element based on page number embedded in the hidden which_page div
@@ -388,7 +389,7 @@ $(document)
                 $('#m_menu').sidebar('hide');    //have to call hide because setting css of display: isn't enough
             }
         });
-            }
+    }
 )
 ;
 ```
