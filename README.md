@@ -6,7 +6,7 @@ Thanks for stopping by.
 
 This **README** describes step-by-step how to add Semantic-UI to a new Rails app and then use it to build the UI for the example shown in the screenshot below.  This example also takes advantage of Semantic-UI's support for mobile responsive design and its surprisingly awesome validation support.
 
-This **repo** contains the Rails 4.2.3 app as described in this readme.  You can fork this repo and be running immediately. 
+This **repo** contains the Rails 4.2.3 app as described in this readme.  You can fork this repo and be running immediately. 
 
 I try (intentionally) to keep to the following convention here: one semantic-ui example per web page.  If that page is named, say, `example_foo.html.erb` then the css for it can be found in `example_foo.css` and the javascript in `example_foo.js`. This is to make it easy to figure out who does what to whom.  The code behind the Semantic-UI website is quite elegant but with 25 examples on a page and the javascript for multiple pages lumped together, it's can be tough to track down who does what to whom.  
 
