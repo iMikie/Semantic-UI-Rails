@@ -2,10 +2,11 @@
 
 Thanks for stopping by.
 
-####[Semantic-UI](www.semantic-ui.com) is one of the newest and most promising user interface toolkits.  
+[Semantic-UI](www.semantic-ui.com) is one of the newest and most promising user interface toolkits. 
 
-1. This **README** describes how to add Semantic-UI to a new Rails app and then shows how to build the screenshot (video) below in a mobile responsive design, and using Semantic's amazing validation support.
-2. This **repo** contains a that Rails 4.2.3 app with the code we built and most likely more Semantic-UI examples integrated into routes, controller, helper, layout and views.  You can fork this repo and be running immediately.  
+This **README** describes how to add Semantic-UI to a new Rails app and then shows how to build the example screenshotted (or possibly in video) below.  The example uses mobile responsive design, as well as Semantic's amazing validation support.
+
+This **repo** contains the Rails 4.2.3 app as described in this readme. You can fork this repo and be running immediately.  
 
 ![Semantic UI screenshot] (https://github.com/iMikie/Semantic-UI-Rails/blob/master/SUI_screenshot.png)
 
