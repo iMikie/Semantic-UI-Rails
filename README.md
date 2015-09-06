@@ -10,7 +10,7 @@ This **repo** contains the Rails 4.2.3 app as described in this readme.  You c
 
 ![Semantic UI screenshot] (https://github.com/iMikie/Semantic-UI-Rails/blob/master/SUI_screenshot.png)
 
-I'm trying out a new instructional convention here: one example per HTML page with separate CSS and JS files for each example. Yes I know you wouldn't do this in production but for purposes of learning it's nice that given `example_foo.html.erb` you know to look for `example_foo.css` and `example_foo.js` for everything you need. 
+I'm trying out a new instructional convention here: one example per HTML page with separate CSS and JS files for each example. Yes I know you wouldn't do this in production but for purposes of learning it's nice that given `example_foo.html.erb`, `example_foo.css` and `example_foo.js` will have everything you need. 
 
 You need to know HTML-CSS-Javascript and JQuery to use Semantic-UI.  
 
