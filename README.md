@@ -10,11 +10,9 @@ This **repo** contains the Rails 4.2.3 app as described in this readme. You can 
 
 ![Semantic UI screenshot] (https://github.com/iMikie/Semantic-UI-Rails/blob/master/SUI_screenshot.png)
 
-Lawrence Turton does have a non-rails [tutorial](https://webdesign.tutsplus.com/courses/getting-started-with-semantic-ui) over at Tuts which I found useful. 
+Lawrence Turton has a non-rails [tutorial](https://webdesign.tutsplus.com/courses/getting-started-with-semantic-ui) over at Tuts which I found useful. 
 
 You need to know HTML-CSS-Javascript and JQuery to use Semantic-UI.   
-
-
 
 If you liked this repo, please drop me a note. Though I've been a programmer for a while, I'm new to the Rails and Semantic-UI communities.  I've written this for others who are likewise new. I think that many people are afraid of writing to a beginner's level for fear of appearing like a beginner themselves.  No such problem here.  The truth is that it only takes a second for a reader to skip a line of explanation they didn't need whereas a line that was really needed but is missing can leave them dead in the water. 
 
@@ -34,9 +32,9 @@ mikefarr at mac dot com
 
 By itself, Semantic-UI is a set of CSS/LESS, Javascript/JQuery libraries that you include in your project.  You use Semantic-UI by writing special (and quite elegant) HTML/CSS and then calling the appropriate Javascript/JQuery routines. 
 
-Start with a new or used Rails app.  I'm on 4.2.3, using Ruby 2.1.2 on a Macintosh. 
+Start with a new or used Rails app.  I'm using Rails 4.2.3, Ruby 2.1.2, and the [postgres app](http://postgresapp.com/) on a Macintosh. 
 
-Add/make sure the following lines are in your Gemfile.  
+Add or make sure the following lines are in your Gemfile.  Some will likely already be there.
 
 ```ruby
 # Use jquery as the JavaScript library
