@@ -6,13 +6,13 @@ Thanks for stopping by.
 
 This **README** describes step-by-step how to add Semantic-UI to a new Rails app and then use it to build the UI for the example shown in the screenshot below.  This example also takes advantage of Semantic-UI's support for mobile responsive design and its surprisingly awesome validation support.
 
-This **repo** contains the Rails 4.2.3 app as described in this readme.  You can fork this repo and be running immediately. (FYI, I use Postgres for my database and the gemfile will include the Postgres gem.  If you use sqlite then remove the pg gem from the gemfile and add in the gem for sqlite3.  Remember to do  rake db:create before rails s.)
+This **repo** contains the Rails 4.2.3 app as described in this readme.  You can fork this repo and be running immediately. (FYI, I use Postgres for my database so the gemfile contains the Postgres gem.  If you use sqlite then remove the pg gem from the gemfile and add in the gem for sqlite3.  Then you can do `rake db:create` and `rails s`.)
 
-I try (intentionally) to keep to the following convention here: one semantic-ui example per web page.  If that page is named, say, `example_foo.html.erb` then the css for it can be found in `example_foo.css` and the javascript in `example_foo.js`. This is to make it easy to figure out who does what to whom.    
+I try (intentionally) to keep to the following convention here: one semantic-ui example per web page.  If that page is named, say, `example_foo.html.erb` then the css for it can be found in `example_foo.css` and the javascript in `example_foo.js`. This is to make it easy to concentrate on one example at a time.    
 
 ![Semantic UI screenshot] (https://github.com/iMikie/Semantic-UI-Rails/blob/master/SUI_screenshot.png)
 
-You need to know HTML-CSS-Javascript and JQuery to use Semantic-UI.   
+You need to know HTML-CSS-Javascript and JQuery to use Semantic-UI.  BTW, Lawrence Turton has a nice non-rails tutorial over on [Tuts](https://webdesign.tutsplus.com/courses/getting-started-with-semantic-ui).
 
 If you liked this repo, please drop me a note. Though I've been a programmer for a while, I'm new to the Rails and Semantic-UI communities.  I've written this for others who are likewise new. I think that many people are afraid of writing to a beginner's level for fear of appearing like a beginner themselves.  No such problem here.  Besides, it's my experience that what keeps you from trying somethingbleeding edge new is the fear that you'll run into a wall and your time will be wasted.  The truth is that it only takes a second for a reader to skip a line of explanation they didn't need whereas a line that was really needed but is missing can leave them dead in the water. 
 
@@ -237,5 +237,175 @@ This is setting some basic things like putting the background image behind every
 Hit reload on the browser and you should now see your menu and logo.  Pretty cool for such a few lines of code, huh?
 
 ##Adding a mobile menu
-Let's add some media queries in case we are on a mobile phone and take advantage of how easy it is to get Semantic-UI to 
+Let's add a menu specifically for the case of our website being viewed on a mobile phone.  Let's add a slide out menu like the one the Semantic-UI website has. Above our #header div, add the following div:
 
+```
+<div id="m_menu" class="ui floating sidebar inverted vertical  menu">
+ <a href="/signup" class="item">      <!--Using standard web syntax -->
+        <i class="menu icon"></i> User Signup
+      </a>
+      <a href=" <%= "#{example_2_path}" %>" class="item"> <!-- Using Rails path helper -->
+        <i class="square outline icon"></i> Example 2
+      </a>
+      <!--Now use full Rails link_to syntax with Semantic-UI-->
+      <%= link_to "<i class='browser icon'></i> Example 3".html_safe, example_3_path, class: "item" %>
+      <%= link_to "<i class='cubes icon'></i> Example 4".html_safe, example_4_path, class: "item" %>
+</div>
+```
+To understand what's going on here, look up the examples on the menu page on semantic-ui.com.  Take a look at sidebar and inverted and the other classes on the id="m_menu" div.  The menu items themselves are identical to the main menu so we could certainly refactor these into a partial.
+
+A sidebar looks for the items it needs to push aside to be wrapped in a div with the class "pusher" so we'll need to add that.  We'll also need a button that will take the place of our main menu on the smaller screen of a phone as well as a smaller version of our logo so let's add those now. Here's what your complete `application.html.erb` file should look like:
+
+**`application.html.erb**`
+
+```
+<!DOCTYPE html>
+<html>
+<head>
+  <title>TestSemantic</title>
+  <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track' => true %>
+  <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
+  <%= csrf_meta_tags %>
+</head>
+<body>
+<div id="m_menu" class="ui floating sidebar inverted vertical  menu">
+  <a href="/signup" class="item">
+    <i class="menu icon"></i> User Signup
+  </a>
+  <a href=" <%= "#{signup_path}" %>" class="item">
+    <i class="square outline icon"></i> Buttons
+  </a>
+  <%= link_to "<i class='browser icon'></i> Collections".html_safe, collections_path, class: "item" %>
+  <%= link_to "<i class='cubes icon'></i> Modules".html_safe, modules_path, class: "item" %>
+</div>
+
+<div class="pusher">
+  <div id="header">
+
+    <%= image_tag("Waterfall-HD-Wallpaper2.jpg", id: "bkgnd") %>
+
+    <div id="mainHead">
+      <div id="menu" class="ui pointing menu inverted fluid four item">
+        <a href="/signup" class="item">      <!--Using standard web syntax -->
+          <i class="menu icon"></i> User Signup
+        </a>
+        <a href=" <%= "#{signup_path}" %>" class="item"> <!-- Using Rails path helper -->
+          <i class="square outline icon"></i> Buttons
+        </a>
+        <!--Now use full Rails link_to syntax with Semantic-UI-->
+        <%= link_to "<i class='browser icon'></i> Collections".html_safe, collections_path, class: "item" %>
+        <%= link_to "<i class='cubes icon'></i> Modules".html_safe, modules_path, class: "item" %>
+      </div>
+      <button id="m_btn" class="ui labeled icon button black">
+        <i class="list layout icon"></i>
+        Menu
+      </button>
+    </div>
+
+    <!--Note that everything in the body must be in the "pusher"-->
+    <h2 id="News" class="ui center aligned icon  inverted huge header">
+      <i class="circular newspaper red inverted icon "></i>
+
+      <div class="content red">
+        Semantic-UI for Rails
+      </div>
+    </h2>
+    <h2 id="smallNews" class="ui center aligned header inverted">
+      <i class="newspaper inverted icon "></i>
+
+      <div class="content">
+        Semantic-UI for Rails
+      </div>
+    </h2>
+  </div>
+
+  <%= yield %>
+
+</div>
+<!--end of pusher -->
+</body>
+
+</html>
+```
+
+###Adding the media queries
+
+If the screen is larger than 630 pixels in width, I want to hide the mobile menu button and, if it's displayed, the mobile menu as well: the user could have rotated a tablet or resized the window on a laptop.  If the screen is smaller that 630px, then I want to display the mobile button and hide the regular menu.  
+
+Add the following media queries to the `application.css` file:
+```
+#m_btn {
+    display: none; /* m_btn must hidden initially and placed before its media query in this file */
+}
+@media all and (min-width: 631px) {
+    #smallNews {
+        display: none;
+    }
+}
+@media all and (max-width: 630px) {
+    #menu {
+        display: none;
+    }
+
+    #News.ui.center.aligned.icon {
+        display: none;
+    }
+
+    #smallNews {
+        display: inline-block;
+        margin-left: 35%
+    }
+
+    #m_btn {
+        display: inline-block;
+        /*note that we can't center here because it's an inline-block, must center from the parent*/
+    }
+}
+```
+
+The first query will disappear the small news item if the screen is larger than mobile size.  The second will hide the main menu when the screen is 630px or less, as well as hiding the large logo, and displaying the mobile menu button and small logo.
+
+Refresh your browser and you'll see there's just a couple more things to do. 
+
+###Adding some Javascript
+We need to add some JQuery to attach a toggle action to our mobile menu button so that it will toggle the slide out menu when clicked.  We also need some javascript to hide the slide out menu if our screen is resized to be greater than, say, 730px.  We need javascript here and not a media query because the slide out menu is too complex and we have to call it's `hide` method explicitly.  Add this javascript to your `application.js` file:
+
+```
+$(document)
+    .ready(function () {
+
+   $('#m_btn').on('click', function () {
+            $('#m_menu').sidebar('toggle');
+        })
+        //highlight top menu element based on page number embedded in the hidden which_page div
+        var menu_item_index = $('div[which_page]').attr('which_page');
+        $('#menu a:eq(' + menu_item_index + '), #m_menu a:eq(' + menu_item_index + ')').addClass('active');
+
+        // when goto > 631px hide the mobile sidebar
+        var mq = window.matchMedia('all and (min-width: 631px)');
+        mq.addListener(function (changed) {
+            if (changed.matches) {               // if the width of browser is more then 631px...
+                $('#m_menu').sidebar('hide');    //have to call hide because setting css of display: isn't enough
+            }
+        });
+            }
+)
+;
+```
+
+Now there's a couple of more tweaks I'd like to make: reducing the fontsize on the menu logo text as the user reduces the width of the sindow and and setting a margin of 10% on the top of the main header when the window is very wide.  Add the following to the `application.css` file:
+
+```
+@media all and (max-width: 730px) {
+    #News {
+        font-size: 1.7em;
+    }
+}
+@media all and (max-width: 900px) {
+    #mainHead .News {
+        margin-top: 10%;
+    }
+}
+```
+###Try it out
+Now reload the browser and try it out.  Shrink the width of the window until the menu disappears.  Next, click the mobile menu button and watch the slideout menu do its thing.  Select a menu item and it disappears.  
