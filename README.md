@@ -14,10 +14,9 @@ I'm trying out a new instructional convention here: one example per HTML page wi
 
 You need to know HTML-CSS-Javascript and JQuery to use Semantic-UI.  
 
-If you liked this repo, please drop me a note. Though I've been a programmer for a while, I'm new to the Rails and Semantic-UI communities. I've written the first part of this tutorial at a very basic level. I think that many people are afraid of writing to a beginner's level for fear of appearing like a beginner themselves.  No such problem here.  Besides, it's my experience that what keeps you from trying something bleeding edge new is usually the dread that never even get it running.  The truth is that it only takes a second for a reader to skip a line of explanation they didn't need whereas a line that was really needed but is missing can leave them dead in the water. 
+If you liked this repo, please drop me a note. Though I've been a programmer for a while, I'm new to the Rails and Semantic-UI communities. I've written the first part of this tutorial at a very basic level. The reason is that it only takes a second to skip a line of explanation you didn't need whereas a line you really need but is missing can leave you dead in the water. What keeps me from trying bleeding edge stuff is usually the dread that I'll never even get it running.  
 
-There are many features of Semantic-UI I haven't tried yet.  If you try them before I do, please send me an email or even better, a pull request and we'll include it here.
-
+There are many features of Semantic-UI I haven't tried yet.  If you try them before I do, please send me an email or even better, add it to a new page (with it's own CSS and JS files) and send me a pull request
 Happy coding, <br>
 Michael Farr <br>
 *Tiburon CA, Sept 2015*
