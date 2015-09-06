@@ -97,7 +97,8 @@ Require `semantic_ui/semantic_ui.css` in `app/assets/application.css`:
 ```
 
 ###Let's create some UI!
-Let's add some semantic-ui to our Rails app.  Let's create 4 blank web pages: 
+
+Let's add some semantic-ui to our Rails app.  Let's create 4 blank web template pages in a new folder, **`views/semantic*`:
 
 ```sh
 cd app/views
@@ -105,9 +106,12 @@ mkdir semantic
 cd semantic
 touch  signup.html.erb example_2.html.erb example_3.html.erb example_4.html.erb
 ```
+
 -
+
 Eventually all 4 pages in this repo should get filled out with xamples so don't be surprised if you fork this repo and find them there and the "example" filenames have been changed to something more descriptive.
 -
+
 
 Now let's add routes for these files: /signup /example_2 /example_3 /example_4
 application.html.erb  we'll put a button bar that will take us to our 4 example pages.  This menu 
