@@ -113,14 +113,14 @@ touch  signup.html.erb example_2.html.erb example_3.html.erb example_4.html.erb
 
 Let's create routes for those pages in `routes.rb`:
 
-```
+```ruby
   get '/signup' => 'semantic#signup'
   get '/example_2' => 'semantic#example_2'
   get '/example_3' => 'semantic#example_3'
   get '/example_4' => 'semantic#example_4'
   ```
   Let's add a **`semantic_controller file`** in **`app/controllers`** with the contents:
-  ```
+  ```ruby
   class SemanticController < ApplicationController
   
   def signup
@@ -142,11 +142,11 @@ end
 ```
 ##Let's run this thing
 Edit signup.html.erb and put in a line of text so we can test that the file is loading.
-```
+```html
 <h1> HeSemantic World </h1>
 ```
 in the terminal run
-```
+```sh
 bin/rake db:create
 rails s
 ```
@@ -195,7 +195,7 @@ Now, if you go back to the main Semantic_UI slide out menu and select Elements/i
 We also need to go into the `application.css` file and add the following CSS:
 
 **application.css**
-```
+```css
 body {
     padding: 0;
     margin: 0;
@@ -239,7 +239,7 @@ Hit reload on the browser and you should now see your menu and logo.  Pretty coo
 ##Adding a mobile menu
 Let's add a menu specifically for the case of our website being viewed on a mobile phone.  Let's add a slide out menu like the one the Semantic-UI website has. Above our #header div, add the following div:
 
-```
+```erb
 <div id="m_menu" class="ui floating sidebar inverted vertical  menu">
  <a href="/signup" class="item">      <!--Using standard web syntax -->
         <i class="menu icon"></i> User Signup
@@ -258,7 +258,7 @@ A sidebar looks for the items it needs to push aside to be wrapped in a div with
 
 **`application.html.erb**`
 
-```
+```erb
 <!DOCTYPE html>
 <html>
 <head>
