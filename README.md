@@ -8,7 +8,7 @@ This **README** describes step-by-step how to add Semantic-UI to a new Rails app
 
 This **repo** contains the Rails 4.2.3 app as described in this readme.  You can fork this repo and be running immediately. (FYI, I use Postgres for my database and the gemfile will include the Postgres gem.  If you use sqlite then remove the pg gem from the gemfile and add in the gem for sqlite3.  Remember to do  rake db:create before rails s.)
 
-I try (intentionally) to keep to the following convention here: one semantic-ui example per web page.  If that page is named, say, `example_foo.html.erb` then the css for it can be found in `example_foo.css` and the javascript in `example_foo.js`. This is to make it easy to figure out who does what to whom.  The code behind the Semantic-UI website is quite elegant but with 25 examples on a page and the javascript for multiple pages lumped together, it's can be tough to track down who does what to whom.  
+I try (intentionally) to keep to the following convention here: one semantic-ui example per web page.  If that page is named, say, `example_foo.html.erb` then the css for it can be found in `example_foo.css` and the javascript in `example_foo.js`. This is to make it easy to figure out who does what to whom.    
 
 ![Semantic UI screenshot] (https://github.com/iMikie/Semantic-UI-Rails/blob/master/SUI_screenshot.png)
 
@@ -98,7 +98,7 @@ Require `semantic_ui/semantic_ui.css` in `app/assets/application.css`:
  */
 ```
 
-###Let's create some UI!
+###Let's started!
 
 Let's add some semantic-ui to our Rails app!  Our example website will have a nice background image, a menu to take us to 4 different pages and the first page will be our user signup example. Later, we'll also create a vertical menu to demonstrate mobile responsive design.
 
@@ -150,12 +150,92 @@ in the terminal run
 bin/rake db:create
 rails s
 ```
-in your browser go to localhost:3000 or whatever the rails s command output tells you to go.
+Now in your browser go to URL **`http://localhost:3000**` or whatever port the output of the `rails s` command indicates.
 
+##Create a background layout
+Let's create the header layout that will appear on every page. We are going to create a menu with four items, each one will take the user to one of our 4 pages.
 
+Go to the [Semantic-UI](www.semantic-ui.com) website.  On the top-left of the page click the menu button to slide out the documentation panel. Take a look at collections/menu.  This extremely long page shows the amazing possibilities available with Semantic-UI just for menus.  If you click on `<>` on the page, it will show you the code for the nearby example.  
 
+Semantic-UI works by defining meaningfully named CSS classes that you can add to HTML tags, mostly divs, to create what you want.  Sometimes you need to add a little javascript such as when you want the selection of a menu item to call one of your own JS functions.  You can also use CSS to add little bits of styling as needed.  We'll see this in action shortly.  
 
+Edit the `application.html.erb` file to put in the following code after the `<body>` tag:
 
+```html
+<div id="header">
+  <%= image_tag("Waterfall-HD-Wallpaper2.jpg", id: "bkgnd") %>
+  <div id="mainHead">
+    <div id="menu" class="ui pointing menu inverted fluid four item">
+      <a href="/signup" class="item">      <!--Using standard web syntax -->
+        <i class="menu icon"></i> User Signup
+      </a>
+      <a href=" <%= "#{example_2_path}" %>" class="item"> <!-- Using Rails path helper -->
+        <i class="square outline icon"></i> Example 2
+      </a>
+      <!--Now use full Rails link_to syntax with Semantic-UI-->
+      <%= link_to "<i class='browser icon'></i> Example 3".html_safe, example_3_path, class: "item" %>
+      <%= link_to "<i class='cubes icon'></i> Example 4".html_safe, example_4_path, class: "item" %>
+    </div>
+  </div>
+  <h2 id="News" class="ui center aligned icon  inverted huge header">
+    <i class="circular newspaper red inverted icon "></i>
+    <div class="content red">
+      Semantic-UI for Rails
+    </div>
+  </h2>
+</div>
+```
+I've created a `<header>` div to surround the HTML that will appear on each page, and it's followed by a Rails image tag for the background.  Then we have a div that Semantic-UI will turn into a menu bar.  You should be able to find and figure out what "ui pointing menu inverted fluid four item" does by browsing  on the semantic-ui website menu page.  Basically, you find something you want in the Semantic-UI docs, click `<>` and figure out what you need to do to recreate it as you would like on your web page.  
 
-Now let's add routes for these files: /signup /example_2 /example_3 /example_4
-application.html.erb  we'll put a button bar that will take us to our 4 example pages.  This menu 
+In the code above I have four links to our four web pages.  In the Semantic-UI pages, they'll use basic HTML style links as I've used in the link to the `/signup` page.  For the second menu item I used a standard href but used a Rails path variable, and for links 3 and 4 I use full Rails `link_to` syntax so you can see how they all compare.  They all do basically the same thing.  You can decide which you like best.  
+
+Now, if you go back to the main Semantic_UI slide out menu and select Elements/icon, you can see the vast number of built in icons provided.  If you click on the `Definition` menu item at the top of the page you browse examples and sample code.  That's all I did to create the nice round, red `Semantic-UI-Rails` logo at the center of the page.
+
+###Add some styling
+We also need to go into the `application.css` file and add the following CSS:
+
+**application.css**
+```
+body {
+    padding: 0;
+    margin: 0;
+    /*width: 100%;*/
+    /*height: 100%;*/
+    font-family: "Helvetica Neue", arial, sans-serif;
+    /*background: url(Waterfall-HD-Wallpaper1.jpg) no-repeat center center fixed;*/
+    -webkit-font-smoothing: antialiased;
+    font-weight: 200;
+    background-color: #000;
+}
+
+#header {
+    position: relative; /* child elements will now reflect the boundries of the parent */
+    overflow: hidden;
+    padding-bottom: 5em;
+}
+
+#mainHead {
+    margin: 40px 40px 0px 40px;
+    text-align: center; /*center the mobile menu button */
+}
+
+#menu {
+    max-width: 1024px;
+    margin: 0 auto;
+}
+
+#bkgnd {
+    position: absolute;
+    top: -10px;
+    width: 100%;
+    height: auto;
+    z-index: -1;
+}
+```
+This is setting some basic things like putting the background image behind everything else, `z-index`, setting some max widths and padding, how the background behaves when the window is resized and leaving space for our individual pages.  Feel free to experiment. If you don't understand what is going on here, check out Laurence
+
+Hit reload on the browser and you should now see your menu and logo.  Pretty cool for such a few lines of code, huh?
+
+##Adding a mobile menu
+Let's add some media queries in case we are on a mobile phone and take advantage of how easy it is to get Semantic-UI to 
+
