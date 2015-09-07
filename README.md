@@ -1,7 +1,5 @@
 # Semantic-UI-Rails
 
-Thanks for stopping by.  
-
 [Semantic-UI](www.semantic-ui.com) is one of the newest and most promising user interface toolkits. 
 
 [Semantic-UI](www.semantic-ui.com) consists of a set of CSS/LESS, Javascript/JQuery libraries that you include in your website project  You make use of Semantic-UI by adding  special CSS classes to your HTML tags and calling appropriate Javascript/JQuery routines.
