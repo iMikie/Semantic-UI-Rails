@@ -13,11 +13,11 @@ This **repo** contains the Rails 4.2.3 app as described in this readme.  You c
 
 ![Semantic UI screenshot] (https://github.com/iMikie/Semantic-UI-Rails/blob/master/readme_images/SUI_screenshot.png)
 
-I'm trying out a new instructional convention here: one example per HTML page with separate CSS and JS files for each example. Yes I know you wouldn't do this in production but for purposes of learning it's nice that given `example_foo.html.erb`, `example_foo.css` and `example_foo.js` will have everything you need. 
+I'm trying out a new instructional convention here as I expect this may grow to several examples: one example per HTML page with separate CSS and JS files for each example. Thus, to find the CSS and JS that work on `example_foo.html.erb`, just look for `example_foo.css` and `example_foo.js`. 
 
 You need to know HTML, CSS, Javascript and JQuery to use Semantic-UI. Semantic-UI uses the LESS preprocessor for CSS but you don't need to know LESS.
 
-If you liked this repo, please drop me a note. Though I've been a programmer for a while, I'm new to the Rails and Semantic-UI communities. I've written the first part of this tutorial at a very basic level. The reason is that it only takes a second to skip a line of explanation you didn't need whereas a line you really need but is missing can leave you dead in the water. What keeps me from trying bleeding edge stuff is usually the dread that I'll never even get it running.  
+If you liked this repo, please drop me a note. Though I've been a programmer for a while, I'm new to the Rails and Semantic-UI communities. I've written the first part of this tutorial at a very basic level. It only takes a second to skip a line of explanation you didn't need whereas a line you really did need but is missing can leave you dead in the water.  I found myself there a lot.  What keeps me from trying bleeding edge stuff is the dread that I'll never even get it running.  
 
 There are many features of Semantic-UI I haven't tried yet.  If you try them before I do, please send me an email or even better, add it to a new page (with it's own CSS and JS files) and send me a pull request
 Happy coding, <br>
