@@ -3,13 +3,13 @@
 Thanks for stopping by.  
 
 [Semantic-UI](www.semantic-ui.com) is one of the newest and most promising user interface toolkits. Semantic-UI consists of a set of CSS/LESS, Javascript/JQuery libraries that you include in your website project. You make use of Semantic-UI by adding  special CSS classes to your HTML tags and calling appropriate Javascript/JQuery routines.
-![Semantic-UI Sidebar](https://github.com/iMikie/Semantic-UI-Rails/blob/master/sidebar-small.png).
+![Semantic-UI Sidebar](https://github.com/iMikie/Semantic-UI-Rails/blob/master/readme_images/sidebar-small.png).
 
 This **README** describes step-by-step how to add Semantic-UI to a new Rails app.  Next we'll build the UI for the example in the screenshot below.  In doing so we'll take advantage of Semantic-UI's rather elegant support for mobile responsive design and client side validation.  If you find you need more help with Semantic-UI itself, Lawrence Turton has a [nice tutorial](https://webdesign.tutsplus.com/courses/getting-started-with-semantic-ui) over on Tuts.  
 
 This **repo** contains the Rails 4.2.3 app as described in this readme.  You can fork this repo and be running immediately. (FYI, I use the [Postgres App](http://postgresapp.com) for Macintosh. (Download, move to /applications, double click. You have a postgres server running.)  This repos's gemfile therefore contains the a line for the Postgres gem.  If you use sqlite then replace it with the equivalent sqlite3 gem before you `rake db:create` and `rails s`.)
 
-![Semantic UI screenshot] (https://github.com/iMikie/Semantic-UI-Rails/blob/master/SUI_screenshot.png)
+![Semantic UI screenshot] (https://github.com/iMikie/Semantic-UI-Rails/blob/master/readme_images/SUI_screenshot.png)
 
 I'm trying out a new instructional convention here: one example per HTML page with separate CSS and JS files for each example. Yes I know you wouldn't do this in production but for purposes of learning it's nice that given `example_foo.html.erb`, `example_foo.css` and `example_foo.js` will have everything you need. 
 
@@ -519,7 +519,7 @@ Look up the SUI classes used below on the SUI website to get a better idea of ho
 ```
 Go ahead and reload your page.  You should see something like this:
 
-![User signup screenshot] (https://github.com/iMikie/Semantic-UI-Rails/blob/master/signup_screenshot1.png)
+![User signup screenshot] (https://github.com/iMikie/Semantic-UI-Rails/blob/master/readme_images/signup_screenshot_1.png)
 
 
 ###Adding validation
