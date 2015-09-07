@@ -2,10 +2,12 @@
 
 Thanks for stopping by.  
 
-[Semantic-UI](www.semantic-ui.com) is one of the newest and most promising user interface toolkits. It consists of a set of CSS/LESS, Javascript/JQuery libraries that you include in your website project. You make use of Semantic-UI by adding  special CSS classes to your HTML tags and calling appropriate Javascript/JQuery routines.
+[Semantic-UI](www.semantic-ui.com) is one of the newest and most promising user interface toolkits. 
+
+[Semantic-UI](www.semantic-ui.com) consists of a set of CSS/LESS, Javascript/JQuery libraries that you include in your website project. You make use of Semantic-UI by adding  special CSS classes to your HTML tags and calling appropriate Javascript/JQuery routines.
 ![Semantic-UI Sidebar](https://github.com/iMikie/Semantic-UI-Rails/blob/master/readme_images/sidebar-small.png).
 
-Unfortunately, the website doesn't say much about how to make Semantic-UI play nice with Rails, and it's new enough that some functionality you just have to figure out with DevTools. There's nothing like an example that you can run. 
+Unfortunately, [Semantic-UI](www.semantic-ui.com) doesn't say much about how to make Semantic-UI play nice with Rails, and it's new enough that some functionality you just have to figure out with your DevTools. 
 
 This **README** describes step-by-step how to add Semantic-UI to a new Rails app.  Next we'll build the UI for the example in the screenshot below.  In doing so we'll take advantage of Semantic-UI's rather elegant support for mobile responsive design and client side validation.  If you find you need more help with Semantic-UI itself, Lawrence Turton has a [nice tutorial](https://webdesign.tutsplus.com/courses/getting-started-with-semantic-ui) over on Tuts.  
 
