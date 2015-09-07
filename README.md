@@ -254,7 +254,7 @@ Let's add a menu specifically for the case of our website being viewed on a mobi
 ```
 To understand what's going on here, look up the examples on the menu page on semantic-ui.com.  Take a look at sidebar and inverted and the other classes on the id="m_menu" div.  The menu items themselves are identical to the main menu so we could certainly refactor these into a partial.
 
-A sidebar looks for the items it needs to push aside to be wrapped in a div with the class "pusher" so we'll need to add that.  We'll also need a button that will take the place of our main menu on the smaller screen of a phone as well as a smaller version of our logo so let's add those now. Here's what your complete `application.html.erb` file should look like:
+A sidebar looks for the items it needs to push aside to be wrapped in a div with the class `pusher`.  We'll also need a button that will take the place of our main menu on the smaller screen of a phone that we can push to show the sidebar menu.  We'll also need a smaller version of our logo. Here's what your complete `application.html.erb` file should look like:
 
 **`application.html.erb`**
 
@@ -418,9 +418,15 @@ Let's put a hidden div on each page that contains the item number of the menu it
 Add the following to the `application.js` file right after the #m_btn callback. 
 ```javascript
         //highlight top menu element based on page number embedded in the hidden which_page div
-        var menu_item_index = $('div[which_page]').attr('which_page');
+        var menu_item_index = $('div[which_page]').attr('which_page') - 1; //DOM siblings are zero indexed
         $('#menu a:eq(' + menu_item_index + '), #m_menu a:eq(' + menu_item_index + ')').addClass('active'); 
 ```
+The variable `menu_item_index` will be set to the number of this page and used to add the `active` attribute of the mobile and desktop menus.
+
 ##Now for the the user signup page
 
-I chose a user signup form 'cause everyone has to create one and because a form has to be connected to Rails to return its information.  First, start by checking out [Segment](http://semantic-ui.com/elements/segment.html) on the Semantic-UI website.  
+A web app practically always needs a user signup form so let's build one.  First, start by checking out [Form](http://semantic-ui.com/elements/form.html) on the Semantic-UI website.  Click `<>` to see the HTML for the first example.  It's actually a little cleaner than a vanilla HTML form which is remarkable given that it's fully styled.  The `ui` class indicates to SUI that it's preprocessing this item.  You'll see that a lot.  
+
+We'll also put the form in a SUI [segment](http://semantic-ui.com/elements/segment.html). Think of a segment as a div with borders, on steroids.  If you need to surround an element or group elements, use a segment. 
+
+
