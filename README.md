@@ -425,9 +425,15 @@ The variable `menu_item_index` will be set to the number of this page and used t
 
 ##Now for the the user signup page
 
-First, start by checking out [Form](http://semantic-ui.com/elements/form.html) on the Semantic-UI's website.  Click `<>` to see the HTML for the first example.  It's actually a little cleaner than a vanilla HTML form which is remarkable given that it's fully styled.  We'll also put the form in a SUI [segment](http://semantic-ui.com/elements/segment.html). Think of a segment as a div with borders, on steroids.  If you need to surround an element or group elements, use a segment. IN the case of a form, you need only add the `segment` class to the form tag.
+First, start by checking out [Form](http://semantic-ui.com/elements/form.html) on the Semantic-UI's website.  Click `<>` to see the HTML for the first example.  
 
-In general, you can mix and match the SUI CSS classes.  Unlike a Java parameter which might be a pointer to a data type with a particular length and format, these CSS classes are extremely high-level parameters.  One CSS class might have the meaning "put everything in this `<div>` inside a raised border and compute whatever you need to to make that happen."   Rather than being a call to run some fragile piece of code, these extremely high level parameters have a meaning, hence the name "Semantic-UI". Look up the SUI classes used below on the SUI website as you add the following to your `signup.html.erb` file:
+We'll put this form in a [segment](http://semantic-ui.com/elements/segment.html). If you need to surround an element or group a set of elements, use a segment. 
+
+In the case of a form, you need only add the `segment` class to the form tag.  In general, you can mix and match the SUI CSS classes.  Unlike a Java parameter which might be a pointer to a data type with a particular length and format, these CSS classes are extremely high-level parameters.  One CSS class might have the meaning "put everything in this `<div>` inside a raised border and compute whatever you need to to make that happen."   Rather than being a call to run some fragile piece of code, these extremely high level parameters have a meaning, hence the name "Semantic-UI". 
+
+In our form we'll have three `<div>` tags that will each contain two fields.  To tell SUI to group them this way we simply add the two CSS classes `two fields` to a `<div>` and have that div surround the two fields and their labels.  
+
+Look up the SUI classes used below on the SUI website to get a better idea of how you might use them, then add the following code to your `signup.html.erb` file:
 
 **`signup.html.erb`**
 ```html
@@ -495,7 +501,8 @@ In general, you can mix and match the SUI CSS classes.  Unlike a Java parameter 
   </div>
 </form>
 ```
+Go ahead and reload your page.  
 
-
+###
 
 
