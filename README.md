@@ -425,8 +425,77 @@ The variable `menu_item_index` will be set to the number of this page and used t
 
 ##Now for the the user signup page
 
-A web app practically always needs a user signup form so let's build one.  First, start by checking out [Form](http://semantic-ui.com/elements/form.html) on the Semantic-UI website.  Click `<>` to see the HTML for the first example.  It's actually a little cleaner than a vanilla HTML form which is remarkable given that it's fully styled.  The `ui` class indicates to SUI that it's preprocessing this item.  You'll see that a lot.  
+First, start by checking out [Form](http://semantic-ui.com/elements/form.html) on the Semantic-UI's website.  Click `<>` to see the HTML for the first example.  It's actually a little cleaner than a vanilla HTML form which is remarkable given that it's fully styled.  We'll also put the form in a SUI [segment](http://semantic-ui.com/elements/segment.html). Think of a segment as a div with borders, on steroids.  If you need to surround an element or group elements, use a segment. IN the case of a form, you need only add the `segment` class to the form tag.
 
-We'll also put the form in a SUI [segment](http://semantic-ui.com/elements/segment.html). Think of a segment as a div with borders, on steroids.  If you need to surround an element or group elements, use a segment. 
+In general, you can mix and match the SUI CSS classes.  Unlike a Java parameter which might be a pointer to a data type with a particular length and format, these CSS classes are extremely high-level parameters.  One CSS class might have the meaning "put everything in this `<div>` inside a raised border and compute whatever you need to to make that happen."   Rather than being a call to run some fragile piece of code, these extremely high level parameters have a meaning, hence the name "Semantic-UI". Look up the SUI classes used below on the SUI website as you add the following to your `signup.html.erb` file:
+
+**`signup.html.erb`**
+```html
+<div which_page="1" hidden="true"></div>
+<form id="signup" class="ui form segment raised">
+  <div id="to-slide-up">
+    <p>Let's go ahead and get you signed up.</p>
+    <div class="two fields">
+      <div class="field">
+        <label>First Name</label>
+        <input placeholder="First Name" name="first-name" type="text">
+      </div>
+      <div class="field">
+        <label>Last Name</label>
+        <input placeholder="Last Name" name="last-name" type="text">
+      </div>
+    </div>
+    <div class="two fields">
+      <div class="required field">
+        <label>Username</label>
+        <input placeholder="Username" name="username" type="text">
+      </div>
+      <div class="required field">
+        <label>Email</label>
+        <input type="email" placeholder="you@example.com" name="email">
+      </div>
+    </div>
+    <div class="two fields">
+      <div class="required field">
+        <label>Password</label>
+        <input type="password" placeholder="password" name="password">
+      </div>
+      <div class="required field">
+        <label>Confirm Password</label>
+        <input type="password" placeholder="confirm password" name="password-confirm">
+      </div>
+    </div>
+  </div>
+
+  <div class="ui segment">
+    <div id="submit-thanks" class="ui shape">
+      <div class="sides">
+        <div class="active side">
+          <div class="inline required field">
+            <div class="ui checkbox">
+              <input type="checkbox" name="terms">
+              <label>I agree to the Terms and Conditions</label>
+            </div>
+            <div id='submit1' class="ui button red submit icon labeled ">
+              <i class="icon edit"></i>
+              Submit
+            </div>
+          </div>
+        </div>
+        <div class="side">
+          <div class="ui segment inverted green ">
+            <h1 class="ui header">
+              <i class="icon checkmark sign"></i>
+              Thank you!
+            </h1>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</form>
+```
+
+
 
 
