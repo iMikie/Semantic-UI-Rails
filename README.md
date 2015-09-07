@@ -2,8 +2,10 @@
 
 Thanks for stopping by.  
 
-[Semantic-UI](www.semantic-ui.com) is one of the newest and most promising user interface toolkits. Semantic-UI consists of a set of CSS/LESS, Javascript/JQuery libraries that you include in your project. You make use of Semantic-UI by adding some clearly named CSS classes to your HTML tags and, when needed, calling appropriate Javascript/JQuery routines.
-![Semantic-UI Sidebar](https://github.com/iMikie/Semantic-UI-Rails/blob/master/sidebar-small.png)
+[Semantic-UI](www.semantic-ui.com) is one of the newest and most promising user interface toolkits. Semantic-UI consists of a set of CSS/LESS, Javascript/JQuery libraries that you include in your website project. You make use of Semantic-UI by adding some clearly named CSS classes to your HTML tags and, when needed, calling appropriate Javascript/JQuery routines.
+![Semantic-UI Sidebar](https://github.com/iMikie/Semantic-UI-Rails/blob/master/sidebar-small.png).
+
+Unfortunately, the Semantic-UI site doesn't say anything about how to make it play nice with Rails and there were no examples I could find on the web that actually worked.  There are details you simply have to learn the hard way, trial and error or reading the code, and in the end nothing beats having a working example.   
 
 This **README** describes step-by-step how to add Semantic-UI to a new Rails app.  Next we'll build the UI for the example in the screenshot below.  In doing so we'll take advantage of Semantic-UI's rather elegant support for mobile responsive design and client side validation.  If you find you need more help with Semantic-UI itself, Lawrence Turton has a [nice tutorial](https://webdesign.tutsplus.com/courses/getting-started-with-semantic-ui) over on Tuts.  
 
@@ -187,7 +189,7 @@ Edit the `application.html.erb` file to put in the following code after the `<bo
 ```
 I've created a `<header>` div to surround the HTML that will appear on each page, and it's followed by a Rails image tag for the background.  Then we have a div that Semantic-UI will turn into a menu bar.  You should be able to find and figure out what "ui pointing menu inverted fluid four item" does by browsing  on the semantic-ui website menu page.  Basically, you find something you want in the Semantic-UI docs, click `<>` and figure out what you need to do to recreate it as you would like on your web page.  
 
-In the code above I have four links to our four web pages.  In the Semantic-UI pages, they'll use basic HTML style links as I've used in the link to the `/signup` page.  For the second menu item I used a standard href but used a Rails path variable, and for links 3 and 4 I use full Rails `link_to` syntax so you can see how they all compare.  They all do basically the same thing.  You can decide which you like best.  
+In the menu code above there are four links to our four web pages.  I wrote the link to the  `/signup` page in standard web format.  For the second menu item I used a Rails path variable, and for links 3 and 4 I use full Rails `link_to` syntax.  They all do the same thing.  You can decide which you like best.  
 
 Now, if you go back to the main Semantic_UI slide out menu and select Elements/icon, you can see the vast number of built in icons provided.  If you click on the `Definition` menu item at the top of the page you browse examples and sample code.  That's all I did to create the nice round, red `Semantic-UI-Rails` logo at the center of the page.
 
@@ -252,7 +254,23 @@ Let's add a menu specifically for the case of our website being viewed on a mobi
       <%= link_to "<i class='cubes icon'></i> Example 4".html_safe, example_4_path, class: "item" %>
 </div>
 ```
-To understand what's going on here, look up the examples on the menu page on semantic-ui.com.  Take a look at sidebar and inverted and the other classes on the id="m_menu" div.  The menu items themselves are identical to the main menu so we could certainly refactor these into a partial.
+To understand what's going on here, look up the examples on the menu page on semantic-ui.com.  Take a look at sidebar and inverted and the other classes on the id="m_menu" div.  The menu items themselves are identical to the main menu so let's refactor these into a partial. Take the four links and put them in a new file inside  `app/views/layouts`:
+
+**`_nav_linkshtml.erb`**
+```
+<a href="/signup" class="item">      <!--Using standard web syntax -->
+  <i class="menu icon"></i> User Signup
+</a>
+<a href=" <%= "#{example_2_path}" %>" class="item"> <!-- Using Rails path helper -->
+  <i class="square outline icon"></i> Example 2
+</a>
+<%= link_to "<i class='browser icon'></i> Example 3".html_safe, example_3_path, class: "item" %>
+<%= link_to "<i class='cubes icon'></i> Example 4".html_safe, example_4_path, class: "item" %>
+```
+Then inside `application.html.erb` replace those lines both times they appear with the following line:
+``` ruby
+  <%= render partial: "layouts/nav_links" %>
+```
 
 A sidebar looks for the items it needs to push aside to be wrapped in a div with the class `pusher`.  We'll also need a button that will take the place of our main menu on the smaller screen of a phone that we can push to show the sidebar menu.  We'll also need a smaller version of our logo. Here's what your complete `application.html.erb` file should look like:
 
@@ -503,6 +521,7 @@ Look up the SUI classes used below on the SUI website to get a better idea of ho
 ```
 Go ahead and reload your page.  
 
-###
+###Adding validation
+
 
 
