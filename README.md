@@ -36,7 +36,7 @@ mikefarr at mac dot com
 
 Start with a new or used Rails app.  I'm using Rails 4.2.3, Ruby 2.1.2, and the [postgres app](http://postgresapp.com/) on a Macintosh. 
 
-Add or make sure the following lines are in your Gemfile.  Some will likely already be there.
+Add or make sure the following lines are in your Gemfile.  Some will likely already be there, others not.
 
 ```ruby
 # Use jquery as the JavaScript library
