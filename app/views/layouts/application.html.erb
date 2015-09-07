@@ -8,16 +8,8 @@
 </head>
 <body>
 <div id="m_menu" class="ui floating sidebar inverted vertical  menu">
-  <a href="/signup" class="item">      <!--Using standard web syntax -->
-    <i class="menu icon"></i> User Signup
-  </a>
-  <a href=" <%= "#{example_2_path}" %>" class="item"> <!-- Using Rails path helper -->
-    <i class="square outline icon"></i> Example 2
-  </a>
-  <%= link_to "<i class='browser icon'></i> Example 3".html_safe, example_3_path, class: "item" %>
-  <%= link_to "<i class='cubes icon'></i> Example 4".html_safe, example_4_path, class: "item" %>
+  <%= render partial: "layouts/nav_links" %>
 </div>
-
 <div class="pusher">
 <div id="header">
 
@@ -25,16 +17,8 @@
 
   <div id="mainHead">
     <div id="menu" class="ui pointing menu inverted fluid four item">
+      <%= render partial: "layouts/nav_links" %>
 
-      <a href="/signup" class="item">      <!--Using standard web syntax -->
-        <i class="menu icon"></i> User Signup
-      </a>
-      <a href=" <%= "#{example_2_path}" %>" class="item"> <!-- Using Rails path helper -->
-        <i class="square outline icon"></i> Example 2
-      </a>
-      <!--Now use full Rails link_to syntax with Semantic-UI-->
-      <%= link_to "<i class='browser icon'></i> Example 3".html_safe, example_3_path, class: "item" %>
-      <%= link_to "<i class='cubes icon'></i> Example 4".html_safe, example_4_path, class: "item" %>
     </div>
     <button id="m_btn" class="ui labeled icon button black">
       <i class="list layout icon"></i>

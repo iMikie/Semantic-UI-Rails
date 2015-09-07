@@ -1,1 +1,66 @@
-This is some text we should see.
+<div which_page="1" hidden="true"></div>
+<form id="signup" class="ui form segment raised">
+  <div id="to-slide-up">
+
+    <p>Let's go ahead and get you signed up.</p>
+
+    <div class="two fields">
+      <div class="field">
+        <label>First Name</label>
+        <input placeholder="First Name" name="first-name" type="text">
+      </div>
+      <div class="field">
+        <label>Last Name</label>
+        <input placeholder="Last Name" name="last-name" type="text">
+      </div>
+    </div>
+    <div class="two fields">
+      <div class="required field">
+        <label>Username</label>
+        <input placeholder="Username" name="username" type="text">
+      </div>
+      <div class="required field">
+        <label>Email</label>
+        <input type="email" placeholder="you@example.com" name="email">
+      </div>
+    </div>
+    <div class="two fields">
+      <div class="required field">
+        <label>Password</label>
+        <input type="password" placeholder="password" name="password">
+      </div>
+      <div class="required field">
+        <label>Confirm Password</label>
+        <input type="password" placeholder="confirm password" name="password-confirm">
+      </div>
+    </div>
+
+  </div>
+
+  <div class="ui segment">
+    <div id="submit-thanks" class="ui shape">
+      <div class="sides">
+        <div class="active side">
+          <div class="inline required field">
+            <div class="ui checkbox">
+              <input type="checkbox" name="terms">
+              <label>I agree to the Terms and Conditions</label>
+            </div>
+            <div id='submit1' class="ui button red submit icon labeled ">
+              <i class="icon edit"></i>
+              Submit
+            </div>
+          </div>
+        </div>
+        <div class="side">
+          <div class="ui segment inverted green ">
+            <h1 class="ui header">
+              <i class="icon checkmark sign"></i>
+              Thank you!
+            </h1>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</form>

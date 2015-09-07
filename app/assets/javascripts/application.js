@@ -23,9 +23,10 @@ $(document)
 
         $('#m_btn').on('click', function () {
             $('#m_menu').sidebar('toggle');
-        })
+        });
+
         //highlight top menu element based on page number embedded in the hidden which_page div
-        var menu_item_index = $('div[which_page]').attr('which_page');
+        var menu_item_index = $('div[which_page]').attr('which_page') - 1; //-1 for zero index
         $('#menu a:eq(' + menu_item_index + '), #m_menu a:eq(' + menu_item_index + ')').addClass('active');
 
         // when goto > 631px hide the mobile sidebar

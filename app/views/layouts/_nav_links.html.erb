@@ -1,0 +1,8 @@
+<a href="/signup" class="item">      <!--Using standard web syntax -->
+  <i class="menu icon"></i> User Signup
+</a>
+<a href=" <%= "#{example_2_path}" %>" class="item"> <!-- Using Rails path helper -->
+  <i class="square outline icon"></i> Example 2
+</a>
+<%= link_to "<i class='browser icon'></i> Example 3".html_safe, example_3_path, class: "item" %>
+<%= link_to "<i class='cubes icon'></i> Example 4".html_safe, example_4_path, class: "item" %>
