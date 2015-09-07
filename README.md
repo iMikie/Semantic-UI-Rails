@@ -5,9 +5,9 @@
 [Semantic-UI](www.semantic-ui.com) consists of a set of CSS/LESS, Javascript/JQuery libraries that you include in your project.  You make use of Semantic-UI by adding  special CSS classes to your HTML tags and calling appropriate Javascript/JQuery routines.
 ![Semantic-UI Sidebar](https://github.com/iMikie/Semantic-UI-Rails/blob/master/readme_images/sidebar-small.png).
 
-Unfortunately, [Semantic-UI](www.semantic-ui.com) doesn't say much about how to make it play nice with Rails, and it's new enough that some functionality you just have to figure out with your DevTools. 
+Unfortunately, [Semantic-UI](www.semantic-ui.com) doesn't say much about how to make it play nice with Rails, and it's new enough that sometimes roll up your sleeves and break out the DevTools. That's where this readme/repo comes in.
 
-This **README** describes step-by-step how to add Semantic-UI to a new Rails app.  Next we'll build the UI for the example in the screenshot below.  In doing so we'll take advantage of Semantic-UI's rather elegant support for mobile responsive design and client side validation.  If you find you need more help with Semantic-UI itself, Lawrence Turton has a [nice tutorial](https://webdesign.tutsplus.com/courses/getting-started-with-semantic-ui) over on Tuts.  
+This **README** describes step-by-step how to add Semantic-UI to a new Rails app.  Next we'll build the UI for the example in the screenshot below.  In doing so we'll take advantage of Semantic-UI's rather elegant support for mobile responsive design and client side validation.  If you find you need more help with Semantic-UI itself, Lawrence Turton has a very good (non-Rails) [ tutorial](https://webdesign.tutsplus.com/courses/getting-started-with-semantic-ui) over on Tuts which I can recommend highly.  
 
 This **repo** contains the Rails 4.2.3 app as described in this readme.  You can fork this repo and be running immediately. (I use the [Postgres App](http://postgresapp.com) for Macintosh. (You just download the file, move it to `applications`, double click and you have a Postgres server running.)  If you use sqlite instead, then replace the pg gem with the equivalent sqlite3 gem in the Gemfile before you `rake db:create` and `rails s`.)
 
@@ -159,9 +159,9 @@ Let's create the header layout that will appear on every page. We are going to c
 
 Go to the [Semantic-UI](www.semantic-ui.com) website.  On the top-left of the page click the menu button to slide out the documentation panel. Take a look at collections/menu.  This extremely long page shows the amazing possibilities available with Semantic-UI just for menus.  If you click on `<>` on the page, it will show you the code for the nearby example.  
 
-Semantic-UI works by defining meaningfully named CSS classes that you can add to HTML tags, mostly divs, to create what you want.  Sometimes you need to add a little javascript such as when you want the selection of a menu item to call one of your own JS functions.  You can also use CSS to add little bits of styling as needed.  We'll see this in action shortly.  
+Semantic-UI works by defining meaningfully named CSS classes that you can add to HTML tags, mostly divs, to create what you want.  Sometimes you need to add a little javascript such as when you want the selection of a menu item to call one of your own javascript functions.  You can also use CSS to add little bits of styling as needed.  We'll see this in action shortly.  
 
-Edit the `application.html.erb` file to put in the following code after the `<body>` tag:
+Edit the `application.html.erb` file to put the following code after the `<body>` tag:
 
 ```html
 <div id="header">
@@ -187,11 +187,11 @@ Edit the `application.html.erb` file to put in the following code after the `<bo
   </h2>
 </div>
 ```
-I've created a `<header>` div to surround the HTML that will appear on each page, and it's followed by a Rails image tag for the background.  Then we have a div that Semantic-UI will turn into a menu bar.  You should be able to find and figure out what "ui pointing menu inverted fluid four item" does by browsing  on the semantic-ui website menu page.  Basically, you find something you want in the Semantic-UI docs, click `<>` and figure out what you need to do to recreate it as you would like on your web page.  
+I've created a `<header>` div to surround the HTML that will appear on each page,.  It's followed by a Rails image tag for the background.  Use whatever image you like.  Then we have a <div> that Semantic-UI will turn into a menu bar.  You should be able to find and figure out what "ui pointing menu inverted fluid four item" does by browsing  on the Semantic-UI  website menu page.  Basically, you find something you want in the Semantic-UI docs, click `<>` and figure out what you need to do to recreate it as you would like on your web page.  
 
 In the menu code above there are four links to our four web pages.  I wrote the link to the  `/signup` page in standard web format.  For the second menu item I used a Rails path variable, and for links 3 and 4 I use full Rails `link_to` syntax.  They all do the same thing.  You can decide which you like best.  
 
-Now, if you go back to the main Semantic_UI slide out menu and select Elements/icon, you can see the vast number of built in icons provided.  If you click on the `Definition` menu item at the top of the page you browse examples and sample code.  That's all I did to create the nice round, red `Semantic-UI-Rails` logo at the center of the page.
+Now, if you go back to the main Semantic_UI slide out menu and select Elements/icon, you can see the vast number of built-in icons provided.  If you click on the `Definition` menu item at the top of the page you browse examples and sample code.  That's what I did to create the nice round, red `Semantic-UI-Rails` logo at the center of the page.
 
 ###Add some styling
 We also need to go into the `application.css` file and add the following CSS:
@@ -205,7 +205,7 @@ body {
     /*height: 100%;*/
     font-family: "Helvetica Neue", arial, sans-serif;
     /*background: url(Waterfall-HD-Wallpaper1.jpg) no-repeat center center fixed;*/
-    -webkit-font-smoothing: antialiased;
+    -webkit-font-smoothing: antialiased; //a modifier for fonts on macintosh I like 
     font-weight: 200;
     background-color: #000;
 }
@@ -234,7 +234,7 @@ body {
     z-index: -1;
 }
 ```
-This is setting some basic things like putting the background image behind everything else, `z-index`, setting some max widths and padding, how the background behaves when the window is resized and leaving space for our individual pages.  Feel free to experiment. If you don't understand what is going on here, check out Laurence
+This is setting some basic things like putting the background image behind everything else, `z-index`, setting some max widths and padding, how the background behaves when the window is resized and leaving space for our individual pages.  Feel free to experiment.
 
 Hit reload on the browser and you should now see your menu and logo.  Pretty cool for such a few lines of code, huh?
 
@@ -428,7 +428,7 @@ Now reload the browser and try it out.  Shrink the width of the window until the
 ###Add menu highlighting
 I'd like the menu item of the page we're on to be highlighted, thus the signup menu item should be selected if we are on the signup page.  
 
-Let's put a hidden div on each page that contains the item number of the menu item we need to highlight, 0 for the signup page, 1,2,3 for the other pages.
+Let's put a hidden <div> on each page that contains the item number of the menu item we need to highlight, 0 for the signup page, 1,2,3 for the other pages.
 
 ```HTML
 <div which_page="0" hidden="true"></div>
@@ -451,7 +451,7 @@ In the case of a form, you need only add the `segment` class to the form tag.  I
 
 In our form we'll have three `<div>` tags that will each contain two fields.  To tell SUI to group them this way we simply add the two CSS classes `two fields` to a `<div>` and have that div surround the two fields and their labels.  
 
-Look up the SUI classes used below on the SUI website to get a better idea of how you might use them, then add the following code to your `signup.html.erb` file:
+Look up the SUI classes used below on the SUI website to get a better idea of how you might use them, then add the following code to your `signup.html.erb` file.  Note the line generating the `authenticity_token`.  You'll have to have that with any Rails form to guard against a [cross-site forgery attack](cross-site-request-forgery-csrf).  More about that later. 
 
 **`signup.html.erb`**
 ```html
@@ -459,6 +459,7 @@ Look up the SUI classes used below on the SUI website to get a better idea of ho
 <form id="signup" class="ui form segment raised">
   <div id="to-slide-up">
     <p>Let's go ahead and get you signed up.</p>
+    <input name="authenticity_token" value="<%= form_authenticity_token %>" type="hidden">
     <div class="two fields">
       <div class="field">
         <label>First Name</label>
@@ -529,7 +530,9 @@ It makes sense to offload as much of the work of validating form fields to the c
 
 SUI defines a format for writing validation rules and provides a rich set of built-in tests you can draw from.  For example, SUI knows how to validate an email address, a credit card number, a URL, and provides more basic building blocks like `contains`, `regEx[expression] and many more. You pass SUI a hash of hashes that indicate which rules apply to which fields in the form.  Those field variables are referenced by id tag, name tag or data-validate tag. Go take a look at [Validation](http://semantic-ui.com/behaviors/form.html) on the Semantic_UI website.  The support is really quite amazing.  
 
-Validations is one of those areas I had to really get in there with DevTools to get it to work.  Once I did it's amazingly stable and powerful.  It's just a new framework.  I create a variable `validations`,  the "hash of hashes" that contains the rules and indicates to which fields they apply.  Next, I create a settings variable through which I'll indicates that I'd like error labels to appear pointing to the offending fields rather than a disconnected list at the top or bottom of the screen.  This gives me auto-complete magically.  I'll also set callbacks for the succes and failure of the validations. 
+Validations is one of those areas I had to really get in there with DevTools to get to work.  "Oh, that's how they're calling it..."  Remember that you can use DevTools to live deconstruct the Semantic-UI website itself.  It's just a new framework.  
+
+I create a variable `validations`,  the "hash of hashes" that contains the rules and indicates to which fields they apply.  Next, I create a settings variable through which I indicate that I'd like error labels to appear pointing to the offending fields rather than a disconnected list at the top or bottom of the screen.  This gives me auto-complete magically.  I'll also set callbacks for the succes and failure of the validations. 
 
 **`signup.js`**
 
