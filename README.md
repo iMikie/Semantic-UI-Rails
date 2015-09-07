@@ -523,6 +523,70 @@ Go ahead and reload your page.  You should see something like this:
 
 
 ###Adding validation
+SUI does client side validation by passing in validation rules and indicating which fields must obey those rules.  SUI validations are a hash of hashes.  Each top level element consists of a name for the field to be validated, the variable name to look for in the HTML which can be the value of a id tag, name tag or data-validate tag, and a list of rules.  This is what ours will look like:
 
+```javascript
+ var validations = {
+            firstName: {
+                identifier: 'first-name',
+                rules: [
+                    {type: 'empty', prompt: 'Please enter your first name'}
+                ]
+            },
+            lastName: {
+                identifier: 'last-name',
+                rules: [
+                    {type: 'empty', prompt: 'Please enter your last name'}
+                ]
+            },
+            username: {
+                identifier: 'username',
+                rules: [
+                    {type: 'empty', prompt: 'Please enter a username'},
+                    {type: 'length[5]', prompt: 'Your username must be at least 5 characters'}
+                ]
+            },
+            email: {
+                identifier: 'email',
+                rules: [
+                    {type: 'email', prompt: 'Please enter a valid e-mail'}
+                ]
+            },
+            password: {
+                identifier: 'password',
+                rules: [
+                    {type: 'empty', prompt: 'Please enter a password'},
+                    {type: 'length[6]', prompt: 'Your password must be at least 6 characters'}
+                ]
+            },
+            passwordConfirm: {
+                identifier: 'password-confirm',
+                rules: [
+                    {
+                        type: 'empty',
+                        prompt: 'Please confirm your password'
+                    },
+                    {
+                        identifier: 'password-confirm',
+                        type: 'match[password]',
+                        prompt: 'Please verify password matches'
+                    }
+                ]
+            },
+            terms: {
+                identifier: 'terms',
+                rules: [
+                    {
+                        type: 'checked',
+                        prompt: 'You must agree to the terms and conditions'
+                    }
+                ]
+            }
+        };
+```
+
+They are not that different from how Rails approaches it.  It makes sense to offload as much of the work of validating form fields to the client as possible.  It's faster and more interactive for the user.  You still need to perform validation on the server side to guard against malicious attacks but it's the final validation to make sure good data goes to the database, not an interactive end user experience you have to program from ther server side.
+
+Go take a look at [Validation](http://semantic-ui.com/behaviors/form.html) on the Semantic_UI website.  The support is really quite amazing.  
 
 
