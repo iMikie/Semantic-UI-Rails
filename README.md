@@ -2,8 +2,10 @@
 
 Thanks for stopping by.  
 
-[Semantic-UI](www.semantic-ui.com) is one of the newest and most promising user interface toolkits. Semantic-UI consists of a set of CSS/LESS, Javascript/JQuery libraries that you include in your website project. You make use of Semantic-UI by adding  special CSS classes to your HTML tags and calling appropriate Javascript/JQuery routines.
+[Semantic-UI](www.semantic-ui.com) is one of the newest and most promising user interface toolkits. It consists of a set of CSS/LESS, Javascript/JQuery libraries that you include in your website project. You make use of Semantic-UI by adding  special CSS classes to your HTML tags and calling appropriate Javascript/JQuery routines.
 ![Semantic-UI Sidebar](https://github.com/iMikie/Semantic-UI-Rails/blob/master/readme_images/sidebar-small.png).
+
+Unfortunately, the website doesn't say much about how to make Semantic-UI play nice with Rails, and it's new enough that some functionality you just have to figure out with DevTools. There's nothing like an example that you can run. 
 
 This **README** describes step-by-step how to add Semantic-UI to a new Rails app.  Next we'll build the UI for the example in the screenshot below.  In doing so we'll take advantage of Semantic-UI's rather elegant support for mobile responsive design and client side validation.  If you find you need more help with Semantic-UI itself, Lawrence Turton has a [nice tutorial](https://webdesign.tutsplus.com/courses/getting-started-with-semantic-ui) over on Tuts.  
 
@@ -527,7 +529,7 @@ It makes sense to offload as much of the work of validating form fields to the c
 
 SUI defines a format for writing validation rules and provides a rich set of built-in tests you can draw from.  For example, SUI knows how to validate an email address, a credit card number, a URL, and provides more basic building blocks like `contains`, `regEx[expression] and many more. You pass SUI a hash of hashes that indicate which rules apply to which fields in the form.  Those field variables are referenced by id tag, name tag or data-validate tag. Go take a look at [Validation](http://semantic-ui.com/behaviors/form.html) on the Semantic_UI website.  The support is really quite amazing.  
 
-This is what it looks like.
+Validations is one of those areas I had to really get in there with DevTools to get it to work.  Once I did it's amazingly stable and powerful.  It's just a new framework.  I create a variable `validations`,  the "hash of hashes" that contains the rules and indicates to which fields they apply.  Next, I create a settings variable through which I'll indicates that I'd like error labels to appear pointing to the offending fields rather than a disconnected list at the top or bottom of the screen.  This gives me auto-complete magically.  I'll also set callbacks for the succes and failure of the validations. 
 
 **`signup.js`**
 
@@ -601,7 +603,7 @@ $(document)
                 //    //do some ajax here, or maybe don't need it, just return it
                 $('#to-slide-up').slideUp(400);
                 $('#submit-thanks').shape('flip down');
-                return false;
+               // return false;
             }
         };
 
