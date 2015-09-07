@@ -517,7 +517,10 @@ Look up the SUI classes used below on the SUI website to get a better idea of ho
   </div>
 </form>
 ```
-Go ahead and reload your page.  
+Go ahead and reload your page.  You should see something like this:
+
+![User signup screenshot] (https://github.com/iMikie/Semantic-UI-Rails/blob/master/signup_screenshot1.png)
+
 
 ###Adding validation
 
