@@ -143,11 +143,11 @@ Let's create routes for those pages in `routes.rb`:
 end
 ```
 ##Let's run this thing
-Edit signup.html.erb and put in a line of text so we can test that the file is loading.
+Add the following line to `signup.html.erb` so we can see that the file is loading.
 ```html
-<h1> HeSemantic World </h1>
+<h1> Hello Semantic World </h1>
 ```
-in the terminal run
+In the terminal run
 ```sh
 bin/rake db:create
 rails s
