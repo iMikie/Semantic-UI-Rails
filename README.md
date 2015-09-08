@@ -491,34 +491,39 @@ Look up the SUI classes used below on the SUI website to get a better idea of ho
       </div>
     </div>
   </div>
-
-  <div class="ui segment">
-    <div id="submit-thanks" class="ui shape">
-      <div class="sides">
-        <div class="active side">
-          <div class="inline required field">
-            <div class="ui checkbox">
-              <input type="checkbox" name="terms">
-              <label>I agree to the Terms and Conditions</label>
-            </div>
-            <div id='submit1' class="ui button red submit icon labeled ">
-              <i class="icon edit"></i>
-              Submit
-            </div>
-          </div>
-        </div>
-        <div class="side">
-          <div class="ui segment inverted green ">
-            <h1 class="ui header">
-              <i class="icon checkmark sign"></i>
-              Thank you!
-            </h1>
-          </div>
-        </div>
+ <div id="terms" class="ui segment">
+    <div class="inline required field">
+      <div class="ui checkbox">
+        <input type="checkbox" name="terms">
+        <label>I agree to the Terms and Conditions</label>
+      </div>
+      <div id='submit1' class="ui button red submit icon labeled ">
+        <i class="icon edit"></i>
+        Submit
       </div>
     </div>
   </div>
+  <div class="ui segment inverted green center aligned">
+    <h1 class="ui header">
+      <i class="icon checkmark sign"></i>
+      Thank you!
+    </h1>
+  </div>
 </form>
+```
+
+###Some simple styling
+Notice that I put an inverted green segment containint a "Thank you!" message.  We'll swap this in for the submit button when the user submits.  Normally in Rails we would respond from the server but this is just a UI example and we're not really submitting anything.  I'd like to do an example wherein I connect this all up to Rails. For now, create a file, `signup.css`, in the `app/assets/stylesheets` folder with the following content:
+**`signup.css`**
+```css
+#signup {
+    margin: 1em;
+}
+
+.ui.segment.inverted.green {
+    width: 100%;
+    display: none;
+}
 ```
 Go ahead and reload your page.  You should see something like this:
 
@@ -526,13 +531,17 @@ Go ahead and reload your page.  You should see something like this:
 
 
 ###Adding validation
-It makes sense to offload as much of the work of validating form fields to the client side as possible.  It's faster and more interactive for the user.  You still need to perform validation on the server side to guard against malicious attacks but it's just a final check, not an interactive  user experience that you are trying to program.
+It makes sense to offload as much of the work of validating form fields to the client side as possible.  It's faster and more interactive for the user.  You still need to perform validation on the server side to guard against malicious attacks but it doesn't have to be an interactive user experience.
 
 SUI defines a format for writing validation rules and provides a rich set of built-in tests you can draw from.  For example, SUI knows how to validate an email address, a credit card number, a URL, and provides more basic building blocks like `contains`, `regEx[expression] and many more. You pass SUI a hash of hashes that indicate which rules apply to which fields in the form.  Those field variables are referenced by id tag, name tag or data-validate tag. Go take a look at [Validation](http://semantic-ui.com/behaviors/form.html) on the Semantic_UI website.  The support is really quite amazing.  
 
 Validations is one of those areas I had to really get in there with DevTools to get to work.  "Oh, that's how they're calling it..."  Remember that you can use DevTools to live deconstruct the Semantic-UI website itself.  It's just a new framework.  
 
-I create a variable `validations`,  the "hash of hashes" that contains the rules and indicates to which fields they apply.  Next, I create a settings variable through which I indicate that I'd like error labels to appear pointing to the offending fields rather than a disconnected list at the top or bottom of the screen.  This gives me auto-complete magically.  I'll also set callbacks for the succes and failure of the validations. 
+First let's create a variable, `validations`.  This is the "hash of hashes" that contains the rules and indicates to which fields they apply.  Next, let's create a `settings` variable through which we can indicate that validation to act through the offending fields rather than by placing error messages in a list at the top or bottom of the screen.  
+
+Next we need to submit the form, or at least show you how we would do that.  As part of our `settings` variable we can set callbacks forthe success and failure of validation. In case of success I'm just going to slide up the form which is not needed anymore and make the "Thank you!" div visible.
+
+Finally, to trigger the validation we initialize our callbacks by calling the `form` method of our SUI form.
 
 **`signup.js`**
 
@@ -603,10 +612,11 @@ $(document)
                 return false;
             },
             onSuccess: function () {
-                //    //do some ajax here, or maybe don't need it, just return it
+                //    here is the submit
                 $('#to-slide-up').slideUp(400);
-                $('#submit-thanks').shape('flip down');
-               // return false;
+                $('#terms').hide();
+                $('.ui.segment.inverted.green').show();
+                return false;
             }
         };
 
@@ -614,9 +624,53 @@ $(document)
     }
 );
 ```
+OK, that's pretty much it.  If you actually want to use this form you should not `return false;` from the onSuccess callback.  You'll need to add a route and handler for it.   
+**`routes.rb`**
+```ruby
+ Rails.application.routes.draw do
+  root 'semantic#signup'
+  get '/signup' => 'semantic#signup'
+  post '/signup' => 'semantic#create'
+  get '/example_2' => 'semantic#example_2'
+  get '/example_3' => 'semantic#example_3'
+  get '/example_4' => 'semantic#example_4'
+end
+```
+Our controller would then look like this:
 
+**`semantic_controller.rb`**
+```ruby
+class SemanticController < ApplicationController
+  def signup
+    render :signup
+  end
 
+  #POST /signup, here's where to process our signup form
+  def create
+    puts params
+    #redirect_to signup
+  end
 
+  def example_2
+    render :example_2
+  end
 
+  def example_3
+    render :example_3
+  end
+
+  def example_4
+    render :example_4
+  end
+end
+```
+
+The solution above leaves the question of how you'd really integrate Semantic-UI with Rails-Resources open just a bit.  You'd want your `user` parameters to be returned from the form in a `user` hash.  You can hand code that, but you'd really like to combine Semantic-UI with Rails form_for helpers and that is the subject of the next tutorial.
+
+Thanks and congradulations for getting this far.
+
+Mike Farr
+September 2015
+Tiburon, CA
 
 
