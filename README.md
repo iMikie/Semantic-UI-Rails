@@ -156,11 +156,17 @@ Let's create routes for those pages.
   end
 end
 ```
+
 ##Let's run this thing
+
 Add the following line to `signup.html.erb` so we can see that the file is loading.
+
+**`signup.html.erb`**:
+
 ```html
 <h1> Hello Semantic World </h1>
 ```
+
 In the terminal run
 ```sh
 bin/rake db:create
@@ -177,6 +183,7 @@ Semantic-UI works by defining meaningfully named CSS classes that you can add to
 
 Edit the `application.html.erb` file to put the following code after the `<body>` tag:
 
+**`application.html.erb`**:
 ```html
 <div id="header">
   <%= image_tag("Waterfall-HD-Wallpaper2.jpg", id: "bkgnd") %>
@@ -210,7 +217,7 @@ Now, if you go back to the main Semantic_UI slide out menu and select Elements/i
 ###Add some styling
 We also need to go into the `application.css` file and add the following CSS:
 
-**application.css**
+**`application.css`**:
 ```css
 body {
     padding: 0;
@@ -255,6 +262,7 @@ Hit reload on the browser and you should now see your menu and logo.  Pretty coo
 ##Adding a mobile menu
 Let's add a menu specifically for the case of our website being viewed on a mobile phone.  Let's add a slide out menu like the one the Semantic-UI website has. Above our #header div, add the following div:
 
+**`appliction.html.erb`**:
 ```erb
 <div id="m_menu" class="ui floating sidebar inverted vertical  menu">
  <a href="/signup" class="item">      <!--Using standard web syntax -->
@@ -281,82 +289,66 @@ To understand what's going on here, look up the examples on the menu page on sem
 <%= link_to "<i class='browser icon'></i> Example 3".html_safe, example_3_path, class: "item" %>
 <%= link_to "<i class='cubes icon'></i> Example 4".html_safe, example_4_path, class: "item" %>
 ```
-Then inside `application.html.erb` replace those lines both times they appear with the following line:
+
+Then inside `application.html.erb` replace those lines both times they appear.
+
+** `application.html.erb`**:
 ``` ruby
   <%= render partial: "layouts/nav_links" %>
 ```
 
 A sidebar looks for the items it needs to push aside to be wrapped in a div with the class `pusher`.  We'll also need a button that will take the place of our main menu on the smaller screen of a phone that we can push to show the sidebar menu.  We'll also need a smaller version of our logo. Here's what your complete `application.html.erb` file should look like:
 
-**`application.html.erb`**
+**`application.html.erb`**:
 
-```html
 <!DOCTYPE html>
 <html>
 <head>
-  <title>TestSemantic</title>
+  <title>SemanticUiRails</title>
   <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track' => true %>
   <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
   <%= csrf_meta_tags %>
 </head>
 <body>
 <div id="m_menu" class="ui floating sidebar inverted vertical  menu">
-  <a href="/signup" class="item">
-    <i class="menu icon"></i> User Signup
-  </a>
-  <a href=" <%= "#{signup_path}" %>" class="item">
-    <i class="square outline icon"></i> Buttons
-  </a>
-  <%= link_to "<i class='browser icon'></i> Collections".html_safe, collections_path, class: "item" %>
-  <%= link_to "<i class='cubes icon'></i> Modules".html_safe, modules_path, class: "item" %>
+  <%= render partial: "layouts/nav_links" %>
 </div>
-
 <div class="pusher">
-  <div id="header">
+<div id="header">
 
-    <%= image_tag("Waterfall-HD-Wallpaper2.jpg", id: "bkgnd") %>
+  <%= image_tag("Waterfall-HD-Wallpaper2.jpg", id: "bkgnd") %>
 
-    <div id="mainHead">
-      <div id="menu" class="ui pointing menu inverted fluid four item">
-        <a href="/signup" class="item">      <!--Using standard web syntax -->
-          <i class="menu icon"></i> User Signup
-        </a>
-        <a href=" <%= "#{signup_path}" %>" class="item"> <!-- Using Rails path helper -->
-          <i class="square outline icon"></i> Buttons
-        </a>
-        <!--Now use full Rails link_to syntax with Semantic-UI-->
-        <%= link_to "<i class='browser icon'></i> Collections".html_safe, collections_path, class: "item" %>
-        <%= link_to "<i class='cubes icon'></i> Modules".html_safe, modules_path, class: "item" %>
-      </div>
-      <button id="m_btn" class="ui labeled icon button black">
-        <i class="list layout icon"></i>
-        Menu
-      </button>
+  <div id="mainHead">
+    <div id="menu" class="ui pointing menu inverted fluid four item">
+      <%= render partial: "layouts/nav_links" %>
+
     </div>
-
-    <!--Note that everything in the body must be in the "pusher"-->
-    <h2 id="News" class="ui center aligned icon  inverted huge header">
-      <i class="circular newspaper red inverted icon "></i>
-
-      <div class="content red">
-        Semantic-UI for Rails
-      </div>
-    </h2>
-    <h2 id="smallNews" class="ui center aligned header inverted">
-      <i class="newspaper inverted icon "></i>
-
-      <div class="content">
-        Semantic-UI for Rails
-      </div>
-    </h2>
+    <button id="m_btn" class="ui labeled icon button black">
+      <i class="list layout icon"></i>
+      Menu
+    </button>
   </div>
 
-  <%= yield %>
+  <!--Note that everything in the body must be in the "pusher"-->
+  <h2 id="News" class="ui center aligned icon  inverted huge header">
+    <i class="circular newspaper red inverted icon "></i>
+    <div class="content red">
+      Semantic-UI for Rails
+    </div>
+  </h2>
+  <h2 id="smallNews" class="ui center aligned header inverted">
+    <i class="newspaper inverted icon "></i>
 
+    <div class="content">
+      Semantic-UI for Rails
+    </div>
+  </h2>
+</div>
+
+<%= yield %>
 </div>
 <!--end of pusher -->
 </body>
-
 </html>
 ```
 
