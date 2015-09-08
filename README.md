@@ -47,7 +47,6 @@ Add or make sure the following lines are in your Gemfile.  Some will likely alre
 # Use jquery as the JavaScript library
 gem 'jquery-rails'
 gem 'jquery-turbolinks'
-
 # Turbolinks makes following links in your web application faster. Read more: https://github.com/rails/turbolinks
 gem 'turbolinks'
 # Build JSON APIs with ease. Read more: https://github.com/rails/jbuilder
@@ -61,7 +60,7 @@ gem 'autoprefixer-rails', '~> 5.2.1.2'
 * **`therubyracer`** <br>
 This embeds Google's V8 javascript engine into Ruby. 
 * **`less-rails-semantic_ui`**  
-There are several gems out there for semantic UI.  I chose [Semantic-UI-Rails-LESS](https://github.com/Semantic-Org/Semantic-UI-Rails-LESS/blob/master/README.md) because it appears to be created by the authors of Semantic-UI.  `'~> 2.0.7.0'` is the most recent version number as of when I wrote this. Work is ongoing and active.  This is the only gem I could find that allows theming.  
+There are several gems out there for semantic UI.  I chose [Semantic-UI-Rails-LESS](https://github.com/Semantic-Org/Semantic-UI-Rails-LESS/blob/master/README.md) because it appears to be created by the authors of Semantic-UI.  `'~> 2.0.7.0'` is the most recent version number as of when I wrote this. Work is ongoing and active.  Besides this is the only gem I could find that allows theming and eventually I want to do that.  
 * **`utoprefixer-rails`** <br>
 This gem is required by **`less-rails-semantic_ui`**.  The Have you seen CSS with lines like: `:-webkit-full-screen a`. That's browser specific CSS code. Autoprefixer is a CSS processor that uses a database which tracks browser specific code and modifies the output CSS. 
 
@@ -76,11 +75,11 @@ Now we need to add the javascript, css, and configuration files provided by gem 
     $ rails generate semantic_ui:install
 ```    
 
-Now take a look in the `vendor/assets` folder.  There are javascripts/ and stylesheets/ folders which now contain semantic_ui folders.  There is a config folder inside the `stylesheets/semantic_ui folder` that contains the files you'll need to modify, down the road, to theme Semantic-UI.
+Now take a look in the `vendor/assets` folder.  You'll find some new folders.  The subfolders `javascripts/` and `stylesheets/` now contain `semantic_ui` folders.  There is also now a config folder inside the `stylesheets/semantic_ui folder` that contains the files you'll need to create your own themes with Semanti-UI.
 
 ###Tell Rails where to find the javascript files.  
 
-Add/make sure the following is in your `app/assets/javascripts/application.js` file.  Note:  this is more specific than what the semantic gem instructions say to do.  This is probably because I'm starting from a new rails app. You can google `jquery_ujs` and `turbolinks` if you need to know more deeply what is going on here.
+Add/make sure the following is in your `app/assets/javascripts/application.js` file.  Note:  this is more specific than what the actual semantic gem instructions say to do.  This is probably because I'm starting from a new rails app. You can google `jquery_ujs` and `turbolinks` if you need to know more deeply what is going on here.
 
 ```javascript
 //= require jquery
@@ -94,7 +93,7 @@ Add/make sure the following is in your `app/assets/javascripts/application.js` f
 
 ###Tell Rails where to find the CSS files
 
-Add/make sure the following is in your app/assets/stylesheets/application.css file.  
+Add/make sure the following is in your `app/assets/stylesheets/application.css` file.  
 
 Require `semantic_ui/semantic_ui.css` in `app/assets/application.css`:
 ```css
@@ -107,9 +106,9 @@ Require `semantic_ui/semantic_ui.css` in `app/assets/application.css`:
 
 ###Let's get started!
 
-Let's add some semantic-ui to our Rails app!  Our example website will have a nice background image, a menu to take us to 4 different pages and the first page will be our user signup example. Later, we'll also create a vertical menu to demonstrate mobile responsive design.
+Let's add some semantic-ui to our Rails app!  Our example website will have a nice background image, a menu to take us to 4 different pages and the first page will be our user signup example. Later, we'll also create a vertical menu with similar content to demonstrate mobile responsive design.
 
-Let's create the 4 blank web pages.  Create a new folder inside the views, **`views/semantic**` and create 4 files there
+Let's create the 4 blank web pages.  Create a new folder inside the views, **`views/semantic**` and create 4 files there.
 
 ```sh
 cd app/views
@@ -133,7 +132,13 @@ Let's create routes for those pages in `routes.rb`:
   def signup
     render :signup
   end
-
+  
+  #POST /signup, here's where to process our signup form
+  def create
+    puts params
+    #redirect_to signup
+  end
+  
   def example_2
     render :example_2
   end
