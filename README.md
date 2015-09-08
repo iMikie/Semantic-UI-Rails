@@ -57,7 +57,7 @@ gem 'less-rails-semantic_ui', '~> 2.0.7.0'
 gem 'autoprefixer-rails', '~> 5.2.1.2'
 ```
 
-**`therubyracer`** <br>
+* **`therubyracer`** <br>
 This embeds Google's V8 javascript engine into Ruby. 
 * **`less-rails-semantic_ui`**  
 There are several gems out there for semantic UI.  I chose [Semantic-UI-Rails-LESS](https://github.com/Semantic-Org/Semantic-UI-Rails-LESS/blob/master/README.md) because it appears to be created by the authors of Semantic-UI.  `'~> 2.0.7.0'` is the most recent version number as of when I wrote this. Work is ongoing and active.  Besides this is the only gem I could find that allows theming and eventually I want to do that.  
