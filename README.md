@@ -12,7 +12,7 @@ This **README** describes step-by-step how to add Semantic-UI to a new Rails app
 ###This Repository
 This **repo** contains the Rails 4.2.3 app as described in this readme.  You can fork this repo and be running immediately. (FYI, I use the [Postgres App](http://postgresapp.com) for Macintosh because it's so easy to install and run.   If you use sqlite instead, then replace `gem pg` with the equivalent sqlite3 gem in the Gemfile before you `rake db:create` and `rails s`.)
 
-![Semantic UI screenshot] (https://github.com/iMikie/Semantic-UI-Rails/blob/master/readme_images/SUI_screenshot.png)
+![Semantic UI screenshot] (https://github.com/iMikie/Semantic-UI-Rails/blob/master/readme_images/signup_screenshot_1.png)
 
 I'm trying out a new instructional convention here as I expect this may grow to several examples: one example per HTML page with separate CSS and JS files for each example. Thus, to find the CSS and JS that work on `example_foo.html.erb`, just look for `example_foo.css` and `example_foo.js`. 
 
