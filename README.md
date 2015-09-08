@@ -81,6 +81,7 @@ Now take a look in the `vendor/assets` folder.  You'll find some new folders.  T
 
 Add/make sure the following is in your `app/assets/javascripts/application.js` file.  Note:  this is more specific than what the actual semantic gem instructions say to do.  This is probably because I'm starting from a new rails app. You can google `jquery_ujs` and `turbolinks` if you need to know more deeply what is going on here.
 
+**`application.js`**
 ```javascript
 //= require jquery
 //= require jquery.turbolinks
@@ -95,7 +96,7 @@ Add/make sure the following is in your `app/assets/javascripts/application.js` f
 
 Add/make sure the following is in your `app/assets/stylesheets/application.css` file.  
 
-Require `semantic_ui/semantic_ui.css` in `app/assets/application.css`:
+**`application.css`**
 ```css
 /*
  *= require semantic_ui/semantic_ui
@@ -110,6 +111,8 @@ Let's add some semantic-ui to our Rails app!  Our example website will have a ni
 
 Let's create the 4 blank web pages.  Create a new folder inside the views, **`views/semantic**` and create 4 files there.
 
+**`views/semantic`**
+
 ```sh
 cd app/views
 mkdir semantic
@@ -117,8 +120,9 @@ cd semantic
 touch  signup.html.erb example_2.html.erb example_3.html.erb example_4.html.erb
 ```
 
-Let's create routes for those pages in `routes.rb`:
+Let's create routes for those pages.
 
+**`routes.rb`**
 ```ruby
   get '/signup' => 'semantic#signup'
   get '/example_2' => 'semantic#example_2'
