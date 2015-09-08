@@ -21,7 +21,9 @@ You'll need to know HTML, CSS, Javascript and JQuery to use Semantic-UI, but alt
 
 --
 
-If you liked this repo, please drop me a note.  I've been a programmer for a while, but I'm new to the Rails and Semantic-UI communities.  The first part of this tutorial is written at a very basic level because I want everyone to be able to try SUI out.  It only takes a second to skip a line of explanation you didn't need whereas a line you really did need but is missing can leave you dead in the water.  I find myself there a lot and what keeps me from trying bleeding edge software most often is the dread that I'll waste a lot of time and never even get it running.  
+If you liked this repo, please drop me a note.  I've been a programmer for a while, but I'm new to the Rails and Semantic-UI communities.  The first part of this tutorial is written at a very basic level because I want everyone to be able to try SUI out.  It only takes a second to skip a line of explanation you didn't need whereas a line you really did need but is missing can leave you dead in the water.  
+
+I find myself there a lot, and what keeps me from trying new software more often is the dread that I'll waste a lot of time and never even get it running.  
 
 There are many features of Semantic-UI (in fact, most of them) that I haven't tried yet.  If you try them before I do, please send me an email or even better, add it to a new web page in this app (with it's own CSS and JS files!) and send me a pull request.
 
