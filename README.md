@@ -5,9 +5,9 @@
 [Semantic-UI](www.semantic-ui.com) consists of a set of CSS/LESS, Javascript/JQuery libraries that you include in your project.  You make use of Semantic-UI by adding  special CSS classes to your HTML tags and calling appropriate Javascript/JQuery routines.
 ![Semantic-UI Sidebar](https://github.com/iMikie/Semantic-UI-Rails/blob/master/readme_images/sidebar-small.png).
 
-Unfortunately, [Semantic-UI](www.semantic-ui.com) doesn't say much about how to make it play nice with Rails, and it's new enough that sometimes roll up your sleeves and break out the DevTools. That's where this readme/repo comes in.
+Unfortunately, [Semantic-UI](www.semantic-ui.com) doesn't say much about how to make it play nice with Rails.
 
-This **README** describes step-by-step how to add Semantic-UI to a new Rails app.  Next we'll build the UI for the example in the screenshot below.  In doing so we'll take advantage of Semantic-UI's rather elegant support for mobile responsive design and client side validation.  If you find you need more help with Semantic-UI itself, Lawrence Turton has a very good (non-Rails) [ tutorial](https://webdesign.tutsplus.com/courses/getting-started-with-semantic-ui) over on Tuts which I can recommend highly.  
+This **README** describes step-by-step how to add Semantic-UI to a new Rails app.  Next we'll build the UI for the example in the screenshot below.  In doing so we'll take advantage of Semantic-UI's rather elegant support for mobile responsive design and client side validation.  If you find you need more help with Semantic-UI itself, Lawrence Turton has a very good (but non-Rails) [ tutorial](https://webdesign.tutsplus.com/courses/getting-started-with-semantic-ui) over on Tuts which I can recommend highly.  
 
 This **repo** contains the Rails 4.2.3 app as described in this readme.  You can fork this repo and be running immediately. (I use the [Postgres App](http://postgresapp.com) for Macintosh. (You just download the file, move it to `applications`, double click and you have a Postgres server running.)  If you use sqlite instead, then replace the pg gem with the equivalent sqlite3 gem in the Gemfile before you `rake db:create` and `rails s`.)
 
