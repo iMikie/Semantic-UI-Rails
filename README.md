@@ -81,7 +81,7 @@ Now take a look in the `vendor/assets` folder.  You'll find some new folders.  T
 
 Add/make sure the following is in your `app/assets/javascripts/application.js` file.  Note:  this is more specific than what the actual semantic gem instructions say to do.  This is probably because I'm starting from a new rails app. You can google `jquery_ujs` and `turbolinks` if you need to know more deeply what is going on here.
 
-**`application.js`**
+**`application.js`**:
 ```javascript
 //= require jquery
 //= require jquery.turbolinks
@@ -96,7 +96,7 @@ Add/make sure the following is in your `app/assets/javascripts/application.js` f
 
 Add/make sure the following is in your `app/assets/stylesheets/application.css` file.  
 
-**`application.css`**
+**`application.css`**:
 ```css
 /*
  *= require semantic_ui/semantic_ui
@@ -111,7 +111,7 @@ Let's add some semantic-ui to our Rails app!  Our example website will have a ni
 
 Let's create the 4 blank web pages.  Create a new folder inside the views, **`views/semantic**` and create 4 files there.
 
-**`views/semantic`**
+**`views/semantic`**:
 
 ```sh
 cd app/views
@@ -122,14 +122,17 @@ touch  signup.html.erb example_2.html.erb example_3.html.erb example_4.html.erb
 
 Let's create routes for those pages.
 
-**`routes.rb`**
+**`routes.rb`**:
 ```ruby
   get '/signup' => 'semantic#signup'
   get '/example_2' => 'semantic#example_2'
   get '/example_3' => 'semantic#example_3'
   get '/example_4' => 'semantic#example_4'
   ```
-  Let's add a **`semantic_controller file`** in **`app/controllers`** with the contents:
+  Let's add a `semantic_controller file` in `app/controllers`.
+  
+  **`semantic_controller.rb`**:
+  
   ```ruby
   class SemanticController < ApplicationController
   
@@ -218,6 +221,7 @@ Now, if you go back to the main Semantic_UI slide out menu and select Elements/i
 We also need to go into the `application.css` file and add the following CSS:
 
 **`application.css`**:
+
 ```css
 body {
     padding: 0;
@@ -255,6 +259,7 @@ body {
     z-index: -1;
 }
 ```
+
 This is setting some basic things like putting the background image behind everything else, `z-index`, setting some max widths and padding, how the background behaves when the window is resized and leaving space for our individual pages.  Feel free to experiment.
 
 Hit reload on the browser and you should now see your menu and logo.  Pretty cool for such a few lines of code, huh?
@@ -290,12 +295,7 @@ To understand what's going on here, look up the examples on the menu page on sem
 <%= link_to "<i class='cubes icon'></i> Example 4".html_safe, example_4_path, class: "item" %>
 ```
 
-Then inside `application.html.erb` replace those lines both times they appear.
-
-** `application.html.erb`**:
-``` ruby
-  <%= render partial: "layouts/nav_links" %>
-```
+Then inside `application.html.erb` replace those lines both times they appear with `<%= render partial: "layouts/nav_links" %>`.
 
 When the sidebar slides out from the side, it looks for the items it needs to push aside to be wrapped in a <div> with the class `pusher`.  We'll also need a button that will take the place of our main menu on the smaller screen of a phone that we can push to show the sidebar menu.  We'll also need a smaller version of our logo. Here's what your complete `application.html.erb` file should look like:
 
@@ -358,7 +358,9 @@ When the sidebar slides out from the side, it looks for the items it needs to pu
 If the screen is larger than 630 pixels in width, I want to hide the mobile menu button and, if it's displayed, the mobile menu as well: the user could have rotated a tablet or resized the window on a laptop.  If the screen is smaller that 630px, then I want to display the mobile button and hide the regular menu.  
 
 Add the following media queries: 
+
 **`application.css`**:
+
 ```css
 #m_btn {
     display: none; /* m_btn must hidden initially and placed before its media query in this file */
@@ -394,7 +396,9 @@ The first query will disappear the small news item if the screen is larger than 
 Refresh your browser and you'll see there's just a couple more things to do. 
 
 ###Adding some Javascript
-We need to add some JQuery to attach a toggle action to our mobile menu button so that it will toggle the slide out menu when clicked.  We also need some javascript to hide the slide out menu if our screen is resized to be greater than, say, 730px.  We need javascript here and not a media query because the slide out menu is too complex and we have to call it's `hide` method explicitly.  Add this javascript to your `application.js` file:
+We need to add some JQuery to attach a toggle action to our mobile menu button so that it will toggle the slide out menu when clicked.  We also need some javascript to hide the slide out menu if our screen is resized to be greater than, say, 730px.  We need javascript here and not a media query because the slide out menu is too complex and we have to call it's `hide` method explicitly.  Add this javascript to,
+
+**`application.js`**:
 
 ```javascript
 $(document)
@@ -416,7 +420,8 @@ $(document)
 ;
 ```
 
-Now there's a couple of more tweaks I'd like to make: reducing the fontsize on the menu logo text as the user reduces the width of the sindow and and setting a margin of 10% on the top of the main header when the window is very wide.  Add the following to the `application.css` file:
+Now there's a couple of more tweaks I'd like to make: reducing the fontsize on the menu logo text as the user reduces the width of the sindow and and setting a margin of 10% on the top of the main header when the window is very wide.  Add the following to,
+**`application.css`**:
 
 ```css
 @media all and (max-width: 730px) {
@@ -430,6 +435,7 @@ Now there's a couple of more tweaks I'd like to make: reducing the fontsize on t
     }
 }
 ```
+
 ###Try it out
 Now reload the browser and try it out.  Shrink the width of the window until the menu disappears.  Next, click the mobile menu button and watch the slideout menu do its thing.  Select a menu item and it disappears.  
 
@@ -441,12 +447,16 @@ Let's put a hidden <div> on each page that contains the item number of the menu 
 ```HTML
 <div which_page="0" hidden="true"></div>
 ```
-Add the following to the `application.js` file right after the #m_btn callback. 
+Add the following file right after the #m_btn callback. 
+
+**`application.js`**:
+
 ```javascript
         //highlight top menu element based on page number embedded in the hidden which_page div
         var menu_item_index = $('div[which_page]').attr('which_page') - 1; //DOM siblings are zero indexed
         $('#menu a:eq(' + menu_item_index + '), #m_menu a:eq(' + menu_item_index + ')').addClass('active'); 
 ```
+
 The variable `menu_item_index` will be set to the number of this page and used to add the `active` attribute of the mobile and desktop menus.
 
 ##Now for the the user signup page
@@ -461,7 +471,7 @@ In our form we'll have three `<div>` tags that will each contain two fields.  To
 
 Look up the SUI classes used below on the SUI website to get a better idea of how you might use them, then add the following code to your `signup.html.erb` file.  Note the line generating the `authenticity_token`.  You'll have to have that with any Rails form to guard against a [cross-site forgery attack](cross-site-request-forgery-csrf).  More about that later. 
 
-**`signup.html.erb`**
+**`signup.html.erb`**:
 ```html
 <div which_page="1" hidden="true"></div>
 <form id="signup" class="ui form segment raised">
@@ -522,7 +532,8 @@ Look up the SUI classes used below on the SUI website to get a better idea of ho
 
 ###Some simple styling
 Notice that I put an inverted green segment containint a "Thank you!" message.  We'll swap this in for the submit button when the user submits.  Normally in Rails we would respond from the server but this is just a UI example and we're not really submitting anything.  I'd like to do an example wherein I connect this all up to Rails. For now, create a file, `signup.css`, in the `app/assets/stylesheets` folder with the following content:
-**`signup.css`**
+
+**`signup.css`**:
 ```css
 #signup {
     margin: 1em;
@@ -551,7 +562,7 @@ Next we need to submit the form, or at least show you how we would do that.  As 
 
 Finally, to trigger the validation we initialize our callbacks by calling the `form` method of our SUI form.
 
-**`signup.js`**
+**`signup.js`**:
 
 ```javascript
 $(document)
@@ -632,8 +643,9 @@ $(document)
     }
 );
 ```
-OK, that's pretty much it.  If you actually want to use this form you should not `return false;` from the onSuccess callback.  You'll need to add a route and handler for it.   
-**`routes.rb`**
+
+OK, that's pretty much it.  If you actually want to use this form you should not `return false;` from the onSuccess callback. Just remove that line and pick up the return in your controller. 
+**`routes.rb`**:
 ```ruby
  Rails.application.routes.draw do
   root 'semantic#signup'
@@ -644,36 +656,9 @@ OK, that's pretty much it.  If you actually want to use this form you should not
   get '/example_4' => 'semantic#example_4'
 end
 ```
-Our controller would then look like this:
 
-**`semantic_controller.rb`**
-```ruby
-class SemanticController < ApplicationController
-  def signup
-    render :signup
-  end
-
-  #POST /signup, here's where to process our signup form
-  def create
-    puts params
-    #redirect_to signup
-  end
-
-  def example_2
-    render :example_2
-  end
-
-  def example_3
-    render :example_3
-  end
-
-  def example_4
-    render :example_4
-  end
-end
-```
-
-The solution above leaves the question of how you'd really integrate Semantic-UI with Rails-Resources open just a bit.  You'd want your `user` parameters to be returned from the form in a `user` hash.  You can hand code that, but you'd really like to combine Semantic-UI with Rails form_for helpers and that is the subject of the next tutorial.
+###Until next time
+The solution above leaves open the question of how you'd integrate a Rails resource with Smeantic-UI and use all your built in Rails helpers.  For examople, you'd want to say `form_for @user` and you'd want your `user` parameters to be returned from the form in a `user` hash.  You can hand code that, but you'd really like to combine Semantic-UI with Rails form_for helpers and that is the subject of the next tutorial.
 
 Thanks and congradulations for getting this far.
 
