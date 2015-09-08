@@ -278,7 +278,7 @@ Let's add a menu specifically for the case of our website being viewed on a mobi
 ```
 To understand what's going on here, look up the examples on the menu page on semantic-ui.com.  Take a look at sidebar and inverted and the other classes on the id="m_menu" div.  The menu items themselves are identical to the main menu so let's refactor these into a partial. Take the four links and put them in a new file inside  `app/views/layouts`:
 
-**`_nav_linkshtml.erb`**
+**`_nav_linkshtml.erb`**:
 ```
 <a href="/signup" class="item">      <!--Using standard web syntax -->
   <i class="menu icon"></i> User Signup
@@ -297,10 +297,11 @@ Then inside `application.html.erb` replace those lines both times they appear.
   <%= render partial: "layouts/nav_links" %>
 ```
 
-A sidebar looks for the items it needs to push aside to be wrapped in a div with the class `pusher`.  We'll also need a button that will take the place of our main menu on the smaller screen of a phone that we can push to show the sidebar menu.  We'll also need a smaller version of our logo. Here's what your complete `application.html.erb` file should look like:
+When the sidebar slides out from the side, it looks for the items it needs to push aside to be wrapped in a <div> with the class `pusher`.  We'll also need a button that will take the place of our main menu on the smaller screen of a phone that we can push to show the sidebar menu.  We'll also need a smaller version of our logo. Here's what your complete `application.html.erb` file should look like:
 
 **`application.html.erb`**:
 
+```html
 <!DOCTYPE html>
 <html>
 <head>
@@ -356,7 +357,8 @@ A sidebar looks for the items it needs to push aside to be wrapped in a div with
 
 If the screen is larger than 630 pixels in width, I want to hide the mobile menu button and, if it's displayed, the mobile menu as well: the user could have rotated a tablet or resized the window on a laptop.  If the screen is smaller that 630px, then I want to display the mobile button and hide the regular menu.  
 
-Add the following media queries to the `application.css` file:
+Add the following media queries: 
+**`application.css`**:
 ```css
 #m_btn {
     display: none; /* m_btn must hidden initially and placed before its media query in this file */
