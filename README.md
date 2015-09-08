@@ -18,7 +18,6 @@ I'm trying out a new instructional convention here as I expect this may grow to 
 
 --
 You'll need to know HTML, CSS, Javascript and JQuery to use Semantic-UI, but although Semantic-UI uses the LESS preprocessor for CSS you don't need to know LESS.
-
 --
 
 If you liked this repo, please drop me a note.  I've been a programmer for a while, but I'm new to the Rails and Semantic-UI communities.  The first part of this tutorial is written at a very basic level because I want everyone to be able to try SUI out.  It only takes a second to skip a line of explanation you didn't need whereas a line you really did need but is missing can leave you dead in the water.  I find myself there a lot and what keeps me from trying bleeding edge software most often is the dread that I'll waste a lot of time and never even get it running.  
