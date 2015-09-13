@@ -52,7 +52,7 @@ gem 'turbolinks'
 # Build JSON APIs with ease. Read more: https://github.com/rails/jbuilder
 gem 'jbuilder', '~> 2.0'
 # Semantic UI assets
-gem 'therubyracer'a
+gem 'therubyracer'
 gem 'less-rails-semantic_ui', '~> 2.0.7.0'
 gem 'autoprefixer-rails', '~> 5.2.1.2'
 ```
