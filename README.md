@@ -353,7 +353,7 @@ When the sidebar slides out from the side, it looks for the items it needs to pu
 </html>
 ```
 
-###Adding the media queries
+### Adding the media queries
 
 If the screen is larger than 630 pixels in width, I want to hide the mobile menu button and, if it's displayed, the mobile menu as well: the user could have rotated a tablet or resized the window on a laptop.  If the screen is smaller that 630px, then I want to display the mobile button and hide the regular menu.  
 
@@ -395,7 +395,7 @@ The first query will disappear the small news item if the screen is larger than 
 
 Refresh your browser and you'll see there's just a couple more things to do. 
 
-###Adding some Javascript
+### Adding some Javascript
 We need to add some JQuery to attach a toggle action to our mobile menu button so that it will toggle the slide out menu when clicked.  We also need some javascript to hide the slide out menu if our screen is resized to be greater than, say, 730px.  We need javascript here and not a media query because the slide out menu is too complex and we have to call it's `hide` method explicitly.  Add this javascript to,
 
 **`application.js`**:
@@ -546,7 +546,7 @@ Notice that I put an inverted green segment containint a "Thank you!" message.  
 ```
 Go ahead and reload your page.  You should see something like this:
 
-![User signup screenshot] (https://github.com/iMikie/Semantic-UI-Rails/blob/master/readme_images/signup_screenshot_1.png)
+![User signup screenshot](https://github.com/iMikie/Semantic-UI-Rails/blob/master/readme_images/signup_screenshot_1.png)
 
 
 ###Adding validation
