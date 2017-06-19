@@ -264,7 +264,7 @@ This is setting some basic things like putting the background image behind every
 
 Hit reload on the browser and you should now see your menu and logo.  Pretty cool for such a few lines of code, huh?
 
-##Adding a mobile menu
+## Adding a mobile menu
 Let's add a menu specifically for the case of our website being viewed on a mobile phone.  Let's add a slide out menu like the one the Semantic-UI website has. Above our #header div, add the following div:
 
 **`appliction.html.erb`**:
@@ -436,10 +436,10 @@ Now there's a couple of more tweaks I'd like to make: reducing the fontsize on t
 }
 ```
 
-###Try it out
+### Try it out
 Now reload the browser and try it out.  Shrink the width of the window until the menu disappears.  Next, click the mobile menu button and watch the slideout menu do its thing.  Select a menu item and it disappears.  
 
-###Add menu highlighting
+### Add menu highlighting
 I'd like the menu item of the page we're on to be highlighted, thus the signup menu item should be selected if we are on the signup page.  
 
 Let's put a hidden <div> on each page that contains the item number of the menu item we need to highlight, 0 for the signup page, 1,2,3 for the other pages.
@@ -459,7 +459,7 @@ Add the following file right after the #m_btn callback.
 
 The variable `menu_item_index` will be set to the number of this page and used to add the `active` attribute of the mobile and desktop menus.
 
-##Now for the the user signup page
+## Now for the the user signup page
 
 First, start by checking out [Form](http://semantic-ui.com/elements/form.html) on the Semantic-UI's website.  Click `<>` to see the HTML for the first example.  
 
@@ -530,7 +530,7 @@ Look up the SUI classes used below on the SUI website to get a better idea of ho
 </form>
 ```
 
-###Some simple styling
+### Some simple styling
 Notice that I put an inverted green segment containint a "Thank you!" message.  We'll swap this in for the submit button when the user submits.  Normally in Rails we would respond from the server but this is just a UI example and we're not really submitting anything.  I'd like to do an example wherein I connect this all up to Rails. For now, create a file, `signup.css`, in the `app/assets/stylesheets` folder with the following content:
 
 **`signup.css`**:
@@ -549,7 +549,7 @@ Go ahead and reload your page.  You should see something like this:
 ![User signup screenshot](https://github.com/iMikie/Semantic-UI-Rails/blob/master/readme_images/signup_screenshot_1.png)
 
 
-###Adding validation
+### Adding validation
 It makes sense to offload as much of the work of validating form fields to the client side as possible.  It's faster and more interactive for the user.  You still need to perform validation on the server side to guard against malicious attacks but it doesn't have to be an interactive user experience.
 
 SUI defines a format for writing validation rules and provides a rich set of built-in tests you can draw from.  For example, SUI knows how to validate an email address, a credit card number, a URL, and provides more basic building blocks like `contains`, `regEx[expression] and many more. You pass SUI a hash of hashes that indicate which rules apply to which fields in the form.  Those field variables are referenced by id tag, name tag or data-validate tag. Go take a look at [Validation](http://semantic-ui.com/behaviors/form.html) on the Semantic_UI website.  The support is really quite amazing.  
@@ -657,7 +657,7 @@ OK, that's pretty much it.  If you actually want to use this form you should not
 end
 ```
 
-###Until next time
+### Until next time
 The solution above leaves open the question of how you'd integrate a Rails resource with Smeantic-UI and use all your built in Rails helpers.  For examople, you'd want to say `form_for @user` and you'd want your `user` parameters to be returned from the form in a `user` hash.  You can hand code that, but you'd really like to combine Semantic-UI with Rails form_for helpers and that is the subject of the next tutorial.
 
 Thanks and congradulations for getting this far.
