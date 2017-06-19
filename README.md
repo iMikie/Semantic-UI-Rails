@@ -12,14 +12,14 @@ This **README** describes step-by-step how to add Semantic-UI to a new Rails app
 ###This Repository
 This **repo** contains the Rails 4.2.3 app as described in this readme.  You can fork this repo and be running immediately. (FYI, I use the [Postgres App](http://postgresapp.com) for Macintosh because it's so easy to install and run.   If you use sqlite instead, then replace `gem pg` with the equivalent sqlite3 gem in the Gemfile before you `rake db:create` and `rails s`.)
 
-![Semantic UI screenshot] (https://github.com/iMikie/Semantic-UI-Rails/blob/master/readme_images/signup_screenshot_1.png)
+![Semantic UI screenshot](https://github.com/iMikie/Semantic-UI-Rails/blob/master/readme_images/signup_screenshot_1.png)
 
 I'm trying out a new instructional convention here as I expect this may grow to several examples: one example per HTML page with separate CSS and JS files for each example. Thus, to find the CSS and JS that work on `example_foo.html.erb`, just look for `example_foo.css` and `example_foo.js`. 
 
---
+---
 You'll need to know HTML, CSS, Javascript and JQuery to use Semantic-UI, but although Semantic-UI uses the LESS preprocessor for CSS you don't need to know LESS.
 
---
+---
 
 If you liked this repo, please drop me a note.  I've been a programmer for a while, but I'm new to the Rails and Semantic-UI communities.  The first part of this tutorial is written at a very basic level because I want everyone to be able to try SUI out.  It only takes a second to skip a line of explanation you didn't need whereas a line you really did need but is missing can leave you dead in the water.  I find myself there a lot, and what keeps me from trying new software more often than not is the dread that I'll waste a lot of time and never even get it running.  
 
@@ -71,7 +71,7 @@ Now run bundle in the terminal:
 ### Adding the Semantic-UI libraries
 Now we need to add the javascript, css, and configuration files provided by gem to the appropriate places in Rails. These should go in the `vendor/assets` directory.   Luckily for us the `less-rails-semantic_ui` gem provides a command to do that.  Just execute the following command in your terminal:
 
-````
+```
     $ rails generate semantic_ui:install
 ```    
 
