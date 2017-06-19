@@ -7,7 +7,7 @@
 ![Semantic-UI Sidebar](https://github.com/iMikie/Semantic-UI-Rails/blob/master/readme_images/sidebar-small.png).
 
 ---
-###This README
+### This README
 This **README** describes step-by-step how to add Semantic-UI to a new Rails app.  Next we'll build the UI for the example in the screenshot below.  In doing so we'll take advantage of Semantic-UI's rather elegant support for mobile responsive design and client side validation.  If you find you need more help with Semantic-UI itself, Lawrence Turton has a very good (but non-Rails) [ tutorial](https://webdesign.tutsplus.com/courses/getting-started-with-semantic-ui) over on Tuts which I can recommend highly.  
 ###This Repository
 This **repo** contains the Rails 4.2.3 app as described in this readme.  You can fork this repo and be running immediately. (FYI, I use the [Postgres App](http://postgresapp.com) for Macintosh because it's so easy to install and run.   If you use sqlite instead, then replace `gem pg` with the equivalent sqlite3 gem in the Gemfile before you `rake db:create` and `rails s`.)
@@ -68,7 +68,7 @@ Now run bundle in the terminal:
 ```
     $ bundle install
 ```
-###Adding the Semantic-UI libraries
+### Adding the Semantic-UI libraries
 Now we need to add the javascript, css, and configuration files provided by gem to the appropriate places in Rails. These should go in the `vendor/assets` directory.   Luckily for us the `less-rails-semantic_ui` gem provides a command to do that.  Just execute the following command in your terminal:
 
 ````
@@ -77,7 +77,7 @@ Now we need to add the javascript, css, and configuration files provided by gem 
 
 Now take a look in the `vendor/assets` folder.  You'll find some new folders.  The subfolders `javascripts/` and `stylesheets/` now contain `semantic_ui` folders.  There is also now a config folder inside the `stylesheets/semantic_ui folder` that contains the files you'll need to create your own themes with Semanti-UI.
 
-###Tell Rails where to find the javascript files.  
+### Tell Rails where to find the javascript files.  
 
 Add/make sure the following is in your `app/assets/javascripts/application.js` file.  Note:  this is more specific than what the actual semantic gem instructions say to do.  This is probably because I'm starting from a new rails app. You can google `jquery_ujs` and `turbolinks` if you need to know more deeply what is going on here.
 
@@ -105,13 +105,13 @@ Add/make sure the following is in your `app/assets/stylesheets/application.css` 
  */
 ```
 
-###Let's get started!
+### Let's get started!
 
 Let's add some semantic-ui to our Rails app!  Our example website will have a nice background image, a menu to take us to 4 different pages and the first page will be our user signup example. Later, we'll also create a vertical menu with similar content to demonstrate mobile responsive design.
 
 Let's create the 4 blank web pages.  Create a new folder inside the views, **`views/semantic**` and create 4 files there.
 
-**`views/semantic`**:
+** `views/semantic` **:
 
 ```sh
 cd app/views
@@ -160,7 +160,7 @@ Let's create routes for those pages.
 end
 ```
 
-##Let's run this thing
+## Let's run this thing
 
 Add the following line to `signup.html.erb` so we can see that the file is loading.
 
@@ -177,7 +177,7 @@ rails s
 ```
 Now in your browser go to URL **`http://localhost:3000**` or whatever port the output of the `rails s` command indicates.
 
-##Create a background layout
+## Create a background layout
 Let's create the header layout that will appear on every page. We are going to create a menu with four items, each one will take the user to one of our 4 pages.
 
 Go to the [Semantic-UI](www.semantic-ui.com) website.  On the top-left of the page click the menu button to slide out the documentation panel. Take a look at collections/menu.  This extremely long page shows the amazing possibilities available with Semantic-UI just for menus.  If you click on `<>` on the page, it will show you the code for the nearby example.  
@@ -217,7 +217,7 @@ In the menu code above there are four links to our four web pages.  I wrote the 
 
 Now, if you go back to the main Semantic_UI slide out menu and select Elements/icon, you can see the vast number of built-in icons provided.  If you click on the `Definition` menu item at the top of the page you browse examples and sample code.  That's what I did to create the nice round, red `Semantic-UI-Rails` logo at the center of the page.
 
-###Add some styling
+### Add some styling
 We also need to go into the `application.css` file and add the following CSS:
 
 **`application.css`**:
